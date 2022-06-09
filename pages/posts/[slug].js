@@ -59,9 +59,11 @@ export default function BlogPost({ post }) {
         <main>
             <img src={post.coverPhoto.url} alt="" />
             <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.content.html }}>
-                
+            
+            <div dangerouslySetInnerHTML={{ __html: post.content.html }}>         
             </div>
         </main>
     )
 }
+
+//el innerHTML debe ir dentro del div, no como un hijo, sino como un atributo. Forma más rara pero funcionó
