@@ -5,17 +5,17 @@ const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i
 const QUERY = gql`
     query Post($slug: String!){
         post(where:{slug:$slug}){
-            id, 
-         title, 
-         datePublish, 
-         slug,
-       content{
+        id, 
+        title, 
+        datePublish, 
+        slug,
+        content{
          html
        }
-       author{
-         username,
-         avatar{
-           url
+        author{
+            username,
+            avatar{
+                url
          }
        }
        coverPhoto{
@@ -42,10 +42,10 @@ export async function getStaticPaths() {
         fallback: false
     }
 }
-export async function getStaticProps({params}) {
-    const slug=params.slug
-    const data = await graphcms.request(QUERY, {slug})
-    const post=data.post
+export async function getStaticProps({ params }) {
+    const slug = params.slug
+    const data = await graphcms.request(QUERY, { slug })
+    const post = data.post
     return {
         props: {
             post
@@ -53,11 +53,15 @@ export async function getStaticProps({params}) {
         revalidate: 10,
     }
 }
-export default function BlogPost({post}) {
-    return(
+export default function BlogPost({ post }) {
+    console.log(post.content.html)
+    return (
         <main>
-            <img src={post.coverPhoto.url} alt=""/>
+            <img src={post.coverPhoto.url} alt="" />
             <h1>{post.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: post.content.html }}>
+                
+            </div>
         </main>
     )
 }
