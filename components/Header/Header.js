@@ -3,11 +3,14 @@ import NavBlog from "../NavMenus/Nav-Blog"
 import NavHome from "../NavMenus/Nav-Home"
 import webLogo from "../../public/logo.svg"
 import styles from "../../styles/Header.module.css"
+import Link from "next/link"
 
 export default function Header({home}){
     return(
         <header className={styles.header}>
-            <Image src={webLogo} alt="website logo" width={80} height={80}/>
+            <Link href="/">
+                <Image src={webLogo} alt="website logo" width={80} height={80}/>
+            </Link>
             {home
                 ? <NavHome />
                 : <NavBlog />                
