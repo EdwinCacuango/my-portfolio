@@ -1,4 +1,6 @@
+import Layout from "../../components/Layout/layout"
 import { GraphQLClient, gql } from "graphql-request"
+import styles from "../../styles/slug.module.css"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
 
@@ -26,7 +28,6 @@ const QUERY = gql`
     }
   
 `
-
 const SLUGLIST = gql`
     {
         posts{
@@ -34,7 +35,6 @@ const SLUGLIST = gql`
         }
     }
 `
-
 export async function getStaticPaths() {
     const { posts } = await graphcms.request(SLUGLIST)
     return {
@@ -54,15 +54,32 @@ export async function getStaticProps({ params }) {
     }
 }
 export default function BlogPost({ post }) {
-    console.log(post.content.html)
     return (
-        <main>
-            <img src={post.coverPhoto.url} alt="" />
-            <h1>{post.title}</h1>
-            
-            <div dangerouslySetInnerHTML={{ __html: post.content.html }}>         
+        <Layout>
+            <h1 className={styles.title}>{post.title}</h1>
+            <div className={styles.slug}>
+                <img src={post.coverPhoto.url} alt="" />
             </div>
-        </main>
+            <div
+                dangerouslySetInnerHTML={{ __html: post.content.html }}
+                className={styles.content}
+            >
+            </div>
+            <div className={styles.author}>
+                <div className={styles.avatar}>
+                    <img
+                        src={post.author.avatar.url}
+                        alt={`${post.author.username} picture`}
+                        className={styles.profile}
+                    />
+                </div>
+                <div>
+                    Creado por: 
+                    <p>{post.author.username}</p>
+                </div>
+
+            </div>
+        </Layout>
     )
 }
 

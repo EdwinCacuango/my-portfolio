@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import Link from "next/link"
 import { GraphQLClient, gql } from "graphql-request"
 import BlogCard from "../components/BlogCard"
-import Header from '../components/Header/Header'
 import Layout from '../components/Layout/layout'
+import styles from "../styles/Blog.module.css"
+
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
 
 const QUERY = gql`
@@ -21,6 +20,7 @@ const QUERY = gql`
          avatar{
            url
          }
+
        }
        coverPhoto{
          url
@@ -42,17 +42,21 @@ export async function getStaticProps() {
 export default function Blog({ posts }) {
   return (
     <Layout>
-      {
-        posts.map(post => {
-          return <BlogCard
-            key={post.id}
-            title={post.title}
-            author={post.author}
-            coverPhoto={post.coverPhoto.url}
-            slug={post.slug}
-          />
-        })
-      }
+      <h1>Últimos posts</h1>
+      <div className={styles.gallery}>
+        {
+          posts.map(post => {
+            return <BlogCard
+              key={post.id}
+              title={post.title}
+              author={post.author.username}
+              coverPhoto={post.coverPhoto.url}
+              slug={post.slug}
+              datePublished={post.datePublish}
+            />
+          })
+        }
+      </div>
     </Layout>
   )
 }
