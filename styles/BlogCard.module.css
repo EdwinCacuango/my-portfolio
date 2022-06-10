@@ -11,8 +11,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  border-color: #FD5E85;
+  color: #FD4371;
 }
 
 .card h2 {
@@ -26,8 +26,13 @@
   line-height: 1.5;
 }
 .cover{
-    margin:0 auto;
+  margin:0 auto;
 }
-.cover img{
+
+.cover  img{
     width:100%;     
+}
+
+.featured{
+  grid-column: 1/span 2;
 }

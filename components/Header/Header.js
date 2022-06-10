@@ -5,18 +5,21 @@ import NavHome from "../NavMenus/Nav-Home"
 import webLogo from "../../public/logo.svg"
 import styles from "../../styles/Header.module.css"
 
-export default function Header({home}){
-    return(
+export default function Header({ home }) {
+    return (
         <header className={styles.header}>
+
             <Link href="/">
-                <Image src={webLogo} alt="website logo" width={80} height={80}/>
+                <a>
+                    <Image src={webLogo} alt="website logo" width={80} height={80} />
+                </a>
             </Link>
             {home
                 ? <NavHome />
-                : <NavBlog />                
+                : <NavBlog />
             }
         </header>
-        
-        
+
+
     )
 }

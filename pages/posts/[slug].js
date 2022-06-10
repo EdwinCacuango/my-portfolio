@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Layout from "../../components/Layout/layout"
 import { GraphQLClient, gql } from "graphql-request"
 import styles from "../../styles/slug.module.css"
@@ -67,9 +68,10 @@ export default function BlogPost({ post }) {
             </div>
             <div className={styles.author}>
                 <div className={styles.avatar}>
-                    <img
+                    <Image
                         src={post.author.avatar.url}
                         alt={`${post.author.username} picture`}
+                        layout="fill"
                         className={styles.profile}
                     />
                 </div>
