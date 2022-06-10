@@ -7,12 +7,10 @@ import styles from "../../styles/Header.module.css"
 export default function Header({home}){
     return(
         <header className={styles.header}>
-            <Image src={webLogo} alt="website logo" width={128} height={128}/>
-            {
-                home
+            <Image src={webLogo} alt="website logo" width={80} height={80}/>
+            {home
                 ? <NavHome />
-                : <NavBlog />
-                
+                : <NavBlog />                
             }
         </header>
         
