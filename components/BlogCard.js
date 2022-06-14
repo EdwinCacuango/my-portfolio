@@ -1,20 +1,20 @@
 import Link from "next/link"
 import Image from "next/image"
-import styles from "../styles/BlogCard.module.css"
-const BlogCard = ({ title, coverPhoto, datePublished, slug, className, category, description }) => {
+
+const BlogCard = ({ title, datePublished, slug, category, description }) => {
     return (
-        <div className={className}>
+        <div>
             <Link href={`/posts/${slug}`}>
-                <div className={styles.card}>
-                    <div className={styles.cover}>
+                <div>
+                    {/* <div>
                         <Image
                             src={coverPhoto}
                             alt=""
                             layout="fill"
-                        />
-                    </div>
-                    <div className={styles.details}>
-                        <p><span className={styles.category}>{category}</span> • {datePublished}</p>
+                        /> */}
+                    {/* </div> */}
+                    <div>
+                        <p><span>{category}</span> • {datePublished}</p>
                         <h2>{title}</h2>
                         <p>{description}</p>                        
                     </div>

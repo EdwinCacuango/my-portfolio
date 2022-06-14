@@ -2,20 +2,19 @@ import Image from "next/image"
 import Layout from "../components/Layout/layout"
 import { Button } from "../components/UI/Button/Button"
 import ExperienceTable from "../components/ExperienceTable/ExperienceTable"
-import styles from "../styles/home-1.module.css"
 
 
 export default function Home() {
   return (
     <Layout home>
-        <section className={styles.presentation}>
-          <p className={styles.enphasis}>Hola! Mi nombre es</p>
+        <section>
+          <p>Hola! Mi nombre es</p>
           <h1>Edwin Cacuango</h1>
           <h2>Utilizo la tecnología para hacer más fácil el acceso a los servios legales</h2>
           <p>Soy egresado de Derecho (un casi abogado) y también soy desarrollador web frontend. Te puedo ayudar en dos tipos de servicios: legales y de desarrollo web. Si quieres mezclar un poco las cosas, también puedo ayudarte en asesoría legal relacionada con la web o podemos crear juntos una app legal.</p>
           <Button>Escríbeme!</Button>
         </section>
-        <section className={styles.about}>
+        <section>
           <div>
             <h2>0.1 About me</h2>
             <div>
@@ -34,7 +33,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.profile}>
+          <div >
             <Image
               src="/fotoPerfil.jpg"
               alt="Edwin Cacuango profile picture"
@@ -43,7 +42,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className={styles.experience}>
+        <section>
           <h3>02. Experiencia</h3>
           <ExperienceTable />
         </section>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { ExperienceData } from "./ExperienceData"
-import styles from "./ExperienceTable.module.css"
 
 const ExperienceTable = () => {
     const [jobs] = useState(ExperienceData)
@@ -28,7 +27,7 @@ const ExperienceTable = () => {
 
 
     return (
-        <div className={styles.experienceTable}>
+        <div >
             <div>
                 <button onClick={(() => setIsLegal(true))}>Legal</button>
                 <button onClick={() => setIsLegal(false)}>Tech</button>
@@ -36,17 +35,17 @@ const ExperienceTable = () => {
             
             {isLegal &&
                 <>
-                    <ul className={styles.organizationsList}>
+                    <ul>
                         {
                             jobsDisplay.map(item=>{
-                                return <li key={item.id}><button className={styles.button} id={item.id} onClick={listenId}>{item.organization}</button></li>
+                                return <li key={item.id}><button id={item.id} onClick={listenId}>{item.organization}</button></li>
                             })
                         }
                     </ul>
                     <div>
                         <h4>{jobSelected.title} @ {jobSelected.organization}</h4>
                         <p>Date</p>
-                        <ul className='list-activities'>
+                        <ul>
                             {jobSelected.activities.map((item, index)=>{
                                 return <li key={index}>{item}</li>
                             })}
