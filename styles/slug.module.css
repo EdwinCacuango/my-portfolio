@@ -1,3 +1,7 @@
+.info{
+    display:flex;
+    gap:1rem;   
+}
 .slug{
     max-width:60%;
     margin-top:0.75rem;

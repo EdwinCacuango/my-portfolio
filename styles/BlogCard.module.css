@@ -32,7 +32,3 @@
 .cover  img{
     width:100%;     
 }
-
-.featured{
-  grid-column: 1/span 2;
-}

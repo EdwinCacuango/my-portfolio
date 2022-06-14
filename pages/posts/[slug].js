@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Layout from "../../components/Layout/layout"
 import { GraphQLClient, gql } from "graphql-request"
+import {format} from "date-fns"
+import {es} from "date-fns/esm/locale"
 import styles from "../../styles/slug.module.css"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
@@ -11,6 +13,11 @@ const QUERY = gql`
         id, 
         title, 
         datePublish, 
+        category {
+            ... on Category {
+              name
+            }
+          }
         slug,
         content{
          html
@@ -55,8 +62,12 @@ export async function getStaticProps({ params }) {
     }
 }
 export default function BlogPost({ post }) {
+    const dateP=format (new Date(post.datePublish), `d MMM yyyy`, {locale:es})
     return (
         <Layout>
+            <div className={styles.info}>
+                <p>{post.category[0].name} • {dateP}</p>
+            </div>
             <h1 className={styles.title}>{post.title}</h1>
             <div className={styles.slug}>
                 <img src={post.coverPhoto.url} alt="" />
@@ -76,7 +87,7 @@ export default function BlogPost({ post }) {
                     />
                 </div>
                 <div>
-                    Creado por: 
+                    Creado por:
                     <p>{post.author.username}</p>
                 </div>
 
