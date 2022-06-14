@@ -1,0 +1,19 @@
+.icon-bar {
+    list-style: none;
+    
+    //Display
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+
+    //Width styles
+    li,
+    a {
+        padding: 0;
+        line-height: 0;        
+    }
+    a img {
+        width: 2rem;
+        height: 2rem;
+    }
+}

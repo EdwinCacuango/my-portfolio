@@ -17,23 +17,6 @@ a {
   box-sizing: border-box;
 }
 
-/* Styles only for grid blog porpuse */
-.featured{
-  grid-column: 1/ 7;
-}
-.featured div {
-  display:flex;
-  gap:2rem;
-}
-.featured div div{
-  display:block;
-}
 
-.relevant1{
-  grid-column: 1/4;
-}
 
-.relevant2{
-  grid-column:4/7;
-}
 

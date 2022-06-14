@@ -1,8 +1,9 @@
 import { GraphQLClient, gql } from "graphql-request"
 import BlogCard from "../components/BlogCard"
 import Layout from '../components/Layout/layout'
-import { format } from "date-fns"
-import { es } from "date-fns/esm/locale"
+import { format, getTime, parseISO } from "date-fns"
+
+import { es } from "date-fns/locale"
 import styles from "../styles/Blog.module.css"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
@@ -48,6 +49,9 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts }) {
+  let dates = parseISO(posts[0].datePublish)
+
+  console.log(dates)
   const featured = posts[0]
   const relevant1 = posts[1]
   const relevant2 = posts[2]
@@ -59,8 +63,11 @@ export default function Blog({ posts }) {
   const relevant2Date = format(new Date(relevant2.datePublish), `d MMM yyyy`, { locale: es })
   return (
     <Layout>
-      <h1>Últimos posts</h1>
-      <div className={styles.gallery}>
+      <div className={styles.header}>
+        <h1>Mi Blog</h1>
+        <p>Un espacio para compartir sobre derecho y tecnología</p>
+      </div>
+      <div className={styles.galleryNews}>
         <BlogCard
           key={featured.id}
           title={featured.title}
@@ -68,8 +75,9 @@ export default function Blog({ posts }) {
           coverPhoto={featured.coverPhoto.url}
           slug={featured.slug}
           datePublished={featuredDate}
-          category={featured.category.name}
-          className="featured"
+          category={featured.category[0].name}
+          className={styles.recently}
+          description={featured.shortDescription}
         />
         <BlogCard
           key={relevant1.id}
@@ -78,8 +86,9 @@ export default function Blog({ posts }) {
           coverPhoto={relevant1.coverPhoto.url}
           slug={relevant1.slug}
           datePublished={relevant1Date}
-          category={relevant1.category.name}
-          className="relevant1"
+          category={relevant1.category[0].name}
+          description={relevant1.shortDescription}
+          className={styles.lessRecently}
         />
         <BlogCard
           key={relevant2.id}
@@ -88,7 +97,9 @@ export default function Blog({ posts }) {
           coverPhoto={relevant2.coverPhoto.url}
           slug={relevant2.slug}
           datePublished={relevant2Date}
-          className="relevant2"
+          category={relevant2.category[0].name}
+          description={relevant2.shortDescription}
+          className={styles.lessRecently}
         />
         {
           notFeatured.map(post => {
@@ -101,9 +112,16 @@ export default function Blog({ posts }) {
               slug={post.slug}
               datePublished={dateP}
               category={post.category[0].name}
-            // description={post.shortDescription}
+              description={post.shortDescription}
+              className={styles.cardGallery}
             />
           })
+        }
+      </div>
+      <div className={styles.allPosts}>
+        <h2>Todos los posts</h2>
+        {
+
         }
       </div>
     </Layout>

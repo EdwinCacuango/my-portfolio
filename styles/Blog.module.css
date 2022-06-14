@@ -1,8 +1,37 @@
-.gallery{
-    max-width: 75%;
-    display: grid;
-    gap:2rem;
-    justify-items: center;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+.header{
+    margin-bottom: 2rem;
+    text-align: center;
 }
+.header h1{
+    margin:0;
+}
+
+.galleryNews{
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap:1rem ;
+    column-gap: 1.5rem;
+}
+
+.recently{
+    grid-row: 1/4;
+    grid-column: 1/2;
+    border: 1px solid #ffceda;
+    border-radius: 10px;
+}
+
+.recently div {
+    height: 100%;
+    display: block;
+    border:none;
+}
+
+.recently div div{
+    height: 60%;
+}
+
+.lessRecently{
+    grid-row: 1fr;
+}
+

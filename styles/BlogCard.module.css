@@ -6,6 +6,8 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  display:flex;
+  gap:1rem;
 }
 
 .card:hover,
@@ -27,8 +29,22 @@
 }
 .cover{
   margin:0 auto;
+  position:relative;
+  width:80%;
 }
 
 .cover  img{
     width:100%;     
+}
+.details{
+  margin-top: .5rem;
+}
+.category{
+  background-color: #FD5E85;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  border-radius: 20px;
+}
+.details h2{
+  margin-top: 1rem;
 }

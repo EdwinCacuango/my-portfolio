@@ -10,15 +10,11 @@ const BlogCard = ({ title, coverPhoto, datePublished, slug, className, category,
                         <Image
                             src={coverPhoto}
                             alt=""
-                            width={144}
-                            height={144}
+                            layout="fill"
                         />
                     </div>
-                    <div>
-                        <div>
-                            <p>{category}</p>
-                            <p>{datePublished}</p>
-                        </div>
+                    <div className={styles.details}>
+                        <p><span className={styles.category}>{category}</span> • {datePublished}</p>
                         <h2>{title}</h2>
                         <p>{description}</p>                        
                     </div>
