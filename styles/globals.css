@@ -56,7 +56,7 @@ a {
 
 .layer{
   background: rgba(225, 29, 72, 0.5);
-  height: 45%;
+  height: 100%;
   width:  100%;
   position: absolute;
   top: 0;

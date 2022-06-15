@@ -20,14 +20,17 @@ export const AboutMe = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-20 relative">
-                <Image
-                    src="/fotoPerfil.jpg"
-                    alt="Edwin Cacuango profile picture"
-                    width={400}
-                    height={313.75}
-                />
-                <div className="layer"></div>
+            <div className="mt-20">
+                <div className="relative">
+                    <Image
+                        src="/fotoPerfil.jpg"
+                        alt="Edwin Cacuango profile picture"
+                        width={400}
+                        height={313.75}
+                    />
+                    <div className="layer"></div>
+                </div>
+
             </div>
         </section>
     )
