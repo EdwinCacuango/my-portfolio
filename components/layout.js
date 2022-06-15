@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../Header/Header'
+import Header from './Header'
 
 export default function Layout({ children, home }) {
     return (<div>
@@ -10,7 +10,7 @@ export default function Layout({ children, home }) {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header home={home}/>
-        <main>
+        <main className='container'>
             {children}
         </main>
     </div>)

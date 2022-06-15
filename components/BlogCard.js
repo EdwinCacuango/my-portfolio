@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const BlogCard = ({ title, datePublished, slug, category, description }) => {
     return (
-        <div>
+        <div className="card">
             <Link href={`/posts/${slug}`}>
                 <div>
                     {/* <div>

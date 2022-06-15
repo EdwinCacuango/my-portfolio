@@ -5,9 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-h1{
-  font-size:4rem;
-}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -17,6 +15,38 @@ a {
   box-sizing: border-box;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+.container{
+  @apply w-9/12 p-12;
+}
+.section-home{
+  @apply h-[95vh] flex flex-col items-start justify-center;
+}
+.card {
+  @apply bg-slate-100 rounded-xl p-4 shadow-lg;
+}
+.btn-primary {
+  @apply bg-rose-500 p-3 text-slate-50;
+}
+.title{
+  @apply text-7xl;
+}
 
+.title-2{
+  @apply text-5xl;
+}
 
+.title-3{
+
+}
+
+.text-enphasis{
+  @apply text-2xl my-3 text-slate-500 ;
+}
+
+.details{
+  @apply text-rose-500 text-xl;
+}
