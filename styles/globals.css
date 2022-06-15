@@ -23,7 +23,7 @@ a {
   @apply w-9/12 p-12;
 }
 .section-home{
-  @apply h-[95vh] flex flex-col items-start justify-center;
+  @apply h-screen flex flex-col items-start justify-center;
 }
 .card {
   @apply bg-slate-100 rounded-xl p-4 shadow-lg;
