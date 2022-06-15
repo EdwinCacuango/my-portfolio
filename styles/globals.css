@@ -53,3 +53,17 @@ a {
 .details{
   @apply text-rose-500 text-xl;
 }
+
+.layer{
+  background: rgba(225, 29, 72, 0.5);
+  height: 45%;
+  width:  100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer:hover{
+  background:transparent;
+}
