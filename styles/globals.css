@@ -19,6 +19,9 @@ a {
 @tailwind components;
 @tailwind utilities;
 
+.center{
+  margin: 0 auto;
+}
 .container{
   @apply w-9/12 p-12;
 }
@@ -36,7 +39,7 @@ a {
 }
 
 .title-2{
-  @apply text-5xl;
+  @apply text-5xl mb-4;
 }
 
 .title-3{

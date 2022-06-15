@@ -10,7 +10,7 @@ export default function Layout({ children, home }) {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header home={home}/>
-        <main className='container'>
+        <main className='center container'>
             {children}
         </main>
     </div>)
