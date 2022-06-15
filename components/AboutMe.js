@@ -1,8 +1,8 @@
 import Image from "next/image"
 export const AboutMe = () => {
     return (
-        <section className="section-home flex gap-8">
-            <div className="max-w-[55%]">
+        <section className="section-home flex gap-12">
+            <div className="max-w-[48%]">
                 <h2 className="title-2">0.1 Sobre mí</h2>
                 <div className="p-2 text-justify">
                     <p> Hola¡ Mi nombre es Edwin. Mi interés en el mundo del desarrollo empezó allá por el 2020 cuando me involucré en el uso de herramientas web y control ciudadano. En este poco tiempo he descubierto todas las ventajas y oportunidades que suponen la fusión de la tecnología y el derecho y estoy realmente entusiasmado de poder colaborar en la creación y distribución de dichas soluciones digitales.</p>
