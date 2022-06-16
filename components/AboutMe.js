@@ -9,7 +9,7 @@ export const AboutMe = () => {
                     <p className="my-2">Actualmente sigo estudiando para convertirme en un experto en desarrollo web, datos personales y ciberseguridad. Adicionalmente, durante este tiempo también he sido miembro de orgnizaciones de innovación legal, legaltech y propiedad intelectual.</p>
                     <div>
                         <p>Estas son algunas de las tecnologías en con las que he trabajado recientemente:</p>
-                        <ul className="grid grid-cols-2 m-3">
+                        <ul className="grid grid-cols-2 m-3 ul-about">
                             <li>Semantic HTML y CSS</li>
                             <li>Boostrap y Tailwind CSS</li>
                             <li>Javascript</li>
@@ -21,7 +21,7 @@ export const AboutMe = () => {
                 </div>
             </div>
             <div className="mt-20">
-                <div className="relative">
+                <div className="relative leading-none">
                     <Image
                         src="/fotoPerfil.jpg"
                         alt="Edwin Cacuango profile picture"

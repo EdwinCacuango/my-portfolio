@@ -1,15 +1,22 @@
 import { useState, useEffect } from "react"
 import { ExperienceData } from "./ExperienceData"
+import { format} from 'date-fns'
+import { es } from "date-fns/locale"
 
-const ExperienceTable = () => {
+const ExperienceTable = ({ isLegal }) => {
+    //Total of jobs imported
     const [jobs] = useState(ExperienceData)
-    const [isLegal, setIsLegal] = useState(true)
+
+    //List of jobs according category clicked
     const [jobsDisplay, setJobsDisplay] = useState(() => {
         let result = jobs.filter((item) => item.tech === false)
         return result
     })
-    const [jobSelected, setJobSelected]=useState(jobsDisplay[0])
 
+    //Job clicked in left colum
+    const [jobSelected, setJobSelected] = useState(jobsDisplay[0])
+
+    //Job show with details
     useEffect(() => {
         if (!isLegal) {
             let noLegal = jobs.filter((item) => item.tech === true)
@@ -19,45 +26,46 @@ const ExperienceTable = () => {
         }
     }, [isLegal, jobs])
 
-    const listenId=(e)=>{
-        const id=e.target.id
-        const result=jobsDisplay.filter(item=>item.id===+id)
+    //Listener to cliked job
+    const listenId = (e) => {
+        const id = e.target.id
+        const result = jobsDisplay.filter(item => item.id === +id)
         setJobSelected(result[0])
     }
 
+    let startDate= format(new Date(jobSelected.startDate), "dd MMM, yyyy", { locale: es })
+    let endDate = format(new Date (jobSelected.endDate), "dd MMM, yyyy", { locale: es })
 
     return (
-        <div >
-            <div>
-                <button onClick={(() => setIsLegal(true))}>Legal</button>
-                <button onClick={() => setIsLegal(false)}>Tech</button>
-            </div>
-            
+        <div className="flex mt-8 gap-12">
             {isLegal &&
                 <>
-                    <ul>
+                    <ul className="border-l-4 border-l-rose-500 p-2 w-[30%]">
                         {
-                            jobsDisplay.map(item=>{
-                                return <li key={item.id}><button id={item.id} onClick={listenId}>{item.organization}</button></li>
+                            jobsDisplay.map(item => {
+                                return (
+                                    <li key={item.id} className="p-2">
+                                        <button className="w-full text-left"id={item.id} onClick={listenId}>{item.organization}</button>
+                                    </li>)
                             })
                         }
                     </ul>
-                    <div>
-                        <h4>{jobSelected.title} @ {jobSelected.organization}</h4>
-                        <p>Date</p>
-                        <ul>
-                            {jobSelected.activities.map((item, index)=>{
-                                return <li key={index}>{item}</li>
+                    <div className="w-full">
+                        <h4 className="title-3">{jobSelected.title}<span className="text-rose-500"> @{jobSelected.organization}</span></h4>
+                        <p className="text-slate-500 text-xl">{startDate} - {endDate}</p>
+                        <ul className="ul-about break-words w-full">
+                            {jobSelected.activities.map((item, index) => {
+                                return <li key={index} className="break-words">{item}</li>
                             })}
                         </ul>
                     </div>
                 </>
-
-
             }
             {!isLegal &&
-                <p>En búsqueda de oportunidades</p>
-
+                <div className="block text-center">
+                    <p className="text-3xl"> Nada por mostrar aún. Sigo en búsqueda de oportunidades</p>
+                    <p className="text-enphasis">¿Tienes algo en mente? Escríbeme</p>
+                </div>
             }
 
         </div>

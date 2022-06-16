@@ -4,8 +4,8 @@ export const ExperienceData = [
         tech: false,
         title: "Área de Nuevas Tecnologías y PI",
         organization: "CEPINT",
-        starDate: Date.parse(),
-        endDate: "",
+        startDate: Date.parse("2021/03/23"),
+        endDate: Date.parse("2022/03/28"),
         activities: [
             "Organización del Primer Conversatorio de Datos Personales y Emprendimiento en Ecuador",
             "Apoyo técnico en conversatorios virtuales",
@@ -18,7 +18,7 @@ export const ExperienceData = [
         tech: false,
         title: "Asistente legal",
         organization: "CIADP",
-        starDate: Date.parse("2020/11/01"),
+        startDate: Date.parse("2020/11/01"),
         endDate: Date.parse("2021/06/01"),
         activities: [
             "Asesoría permanente en la creación de estatutos, procesos de democracia interna, otorgamiento de la personalidad jurídica y  elección e inscripción de las primeras autoridades.",
@@ -32,7 +32,7 @@ export const ExperienceData = [
         tech: false,
         title: "Asistente legal",
         organization: "Ciudadanía y Desarrollo",
-        starDate: Date.parse("2019/08/01"),
+        startDate: Date.parse("2019/08/01"),
         endDate: Date.parse("2021/05/01"),
         activities: [
             "Apoyo en actividades del Observatorio Legislativo",

@@ -23,10 +23,10 @@ a {
   margin: 0 auto;
 }
 .container{
-  @apply w-9/12 p-12;
+  @apply w-9/12 p-12 snap-x snap-mandatory ;
 }
 .section-home{
-  @apply h-screen py-24;
+  @apply h-screen py-24 snap-always snap-center;
 }
 .card {
   @apply bg-slate-100 rounded-xl p-4 shadow-lg;
@@ -36,6 +36,7 @@ a {
 }
 .title{
   @apply text-7xl;
+  
 }
 
 .title-2{
@@ -43,7 +44,7 @@ a {
 }
 
 .title-3{
-
+ @apply text-2xl mb-2;
 }
 
 .text-enphasis{
@@ -62,8 +63,18 @@ a {
   top: 0;
   left: 0;
   transition: 0.5s;
+  inline-height:0;
+  padding:0
 }
 
 .layer:hover{
   background:transparent;
+}
+
+.ul-about li::before{
+  content:"»";
+  margin-right:0.5rem;
+  font-size:1.5rem;
+  @apply text-rose-500;
+
 }
