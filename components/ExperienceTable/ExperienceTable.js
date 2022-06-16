@@ -33,19 +33,19 @@ const ExperienceTable = ({ isLegal }) => {
         setJobSelected(result[0])
     }
 
-    let startDate= format(new Date(jobSelected.startDate), "dd MMM, yyyy", { locale: es })
-    let endDate = format(new Date (jobSelected.endDate), "dd MMM, yyyy", { locale: es })
+    let startDate= format(new Date(jobSelected.startDate), "MMM yyyy", { locale: es })
+    let endDate = format(new Date (jobSelected.endDate), "MMM yyyy", { locale: es })
 
     return (
         <div className="flex mt-8 gap-12">
             {isLegal &&
                 <>
-                    <ul className="border-l-4 border-l-rose-500 p-2 w-[30%]">
+                    <ul className="w-[30%] organizations-list">
                         {
                             jobsDisplay.map(item => {
                                 return (
-                                    <li key={item.id} className="p-2">
-                                        <button className="w-full text-left"id={item.id} onClick={listenId}>{item.organization}</button>
+                                    <li key={item.id} className="m-0">
+                                        <button id={item.id} onClick={listenId}>{item.organization}</button>
                                     </li>)
                             })
                         }

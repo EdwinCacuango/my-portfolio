@@ -19,13 +19,13 @@ a {
 @tailwind components;
 @tailwind utilities;
 
-.center{
+.center {
   margin: 0 auto;
 }
-.container{
-  @apply w-9/12 p-12 snap-x snap-mandatory ;
+.container {
+  @apply w-9/12 p-12 snap-x snap-mandatory;
 }
-.section-home{
+.section-home {
   @apply h-screen py-24 snap-always snap-center;
 }
 .card {
@@ -34,47 +34,72 @@ a {
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;
 }
-.title{
+.title {
   @apply text-7xl;
-  
 }
 
-.title-2{
+.title-2 {
   @apply text-5xl mb-4;
 }
 
-.title-3{
- @apply text-2xl mb-2;
+.title-3 {
+  @apply text-2xl mb-2;
 }
 
-.text-enphasis{
-  @apply text-2xl my-3 text-slate-500 ;
+.text-enphasis {
+  @apply text-2xl my-3 text-slate-500;
 }
 
-.details{
+.details {
   @apply text-rose-500 text-xl;
 }
 
-.layer{
+.layer {
   background: rgba(225, 29, 72, 0.5);
   height: 100%;
-  width:  100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   transition: 0.5s;
-  inline-height:0;
-  padding:0
+  inline-height: 0;
+  padding: 0;
 }
 
-.layer:hover{
-  background:transparent;
+.layer:hover {
+  background: transparent;
 }
 
-.ul-about li::before{
-  content:"»";
-  margin-right:0.5rem;
-  font-size:1.5rem;
+.ul-about li::before {
+  content: "»";
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
   @apply text-rose-500;
+}
 
+.organizations-list {
+  border-left: 3px solid rgb(252, 133, 133);
+  margin:0;
+  padding:0;
+}
+
+.organizations-list li:focus-visible,
+.organizations-list li:hover{
+  width:100%;
+  border-color: transparent;
+  @apply bg-rose-500 text-slate-50;
+} 
+
+.organizations-list li button {
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+}
+.organizations-list li button:focus-visible,
+.organizations-list li button:focus {
+  margin-left:-3px;
+  outline-color: transparent;
+  @apply bg-rose-500 text-slate-50;
 }
