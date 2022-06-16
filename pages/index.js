@@ -12,7 +12,7 @@ export default function Home() {
     <Layout home>
       <Presentation />
       <AboutMe />
-      <section className="section-home">
+      <section className="section-home" id="experience">
         <div className="flex gap-8 items-center">
           <h2 className="title-2">02. Experiencia</h2>
           <div>
