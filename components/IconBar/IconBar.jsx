@@ -23,8 +23,8 @@ const IconBar = () => {
         },
         {
             title: "GitHub",
-            img: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
-            url:GithubLogo 
+            img:GithubLogo,
+            url:"https://github.com/EdwinCacuango" 
         }           
     ]
     return (<ul className="icon-bar">

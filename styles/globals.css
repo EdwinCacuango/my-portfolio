@@ -29,8 +29,13 @@ a {
   @apply h-screen py-24 snap-always snap-center;
 }
 .card {
-  @apply bg-slate-100 rounded-xl p-4 shadow-lg;
+  @apply bg-gray-50  rounded-xl p-4 shadow-lg;
 }
+
+.icon-card span img{
+  @apply bg-rose-500;
+}
+
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;
 }
@@ -67,7 +72,7 @@ a {
 }
 
 .layer:hover {
-  background: transparent;
+  background-color: transparent;
 }
 
 .ul-about li::before {

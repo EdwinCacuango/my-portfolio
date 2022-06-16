@@ -4,6 +4,7 @@ import { Presentation } from "../components/Presentation"
 import { AboutMe } from "../components/AboutMe"
 import { Button } from "../components/UI/Button"
 import { useState } from "react"
+import { Projects } from "../components/Projects"
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         </div>
         <ExperienceTable isLegal={isLegal}/>
       </section>
+      <Projects />
 
     </Layout>
 
