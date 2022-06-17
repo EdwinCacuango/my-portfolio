@@ -4,7 +4,7 @@ import { Button } from "../UI/Button"
 export default function NavHome(){
     return (
         <nav>
-            <ul className="flex justify-content-center items-center gap-4">
+            <ul className="nav">
                 <li><a href="/#about">About me</a></li>
                 <li><a href="/#experience">Experiencia</a></li>
                 <li><a href="/#projects">Proyectos</a></li>
