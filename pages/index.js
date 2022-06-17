@@ -5,10 +5,11 @@ import { AboutMe } from "../components/AboutMe"
 import { Button } from "../components/UI/Button"
 import { useState } from "react"
 import { Projects } from "../components/Projects"
+import FormContact from "../components/FormContact"
 
 
 export default function Home() {
-  const [isLegal, setIsLegal]=useState(true)
+  const [isLegal, setIsLegal] = useState(true)
   return (
     <Layout home>
       <Presentation />
@@ -22,10 +23,10 @@ export default function Home() {
             <Button stylesAdded="mx-2" onClick={() => setIsLegal(false)}>Tech</Button>
           </div>
         </div>
-        <ExperienceTable isLegal={isLegal}/>
+        <ExperienceTable isLegal={isLegal} />
       </section>
       <Projects />
-
+      <FormContact />
     </Layout>
 
   )

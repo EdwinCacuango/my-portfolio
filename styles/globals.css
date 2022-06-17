@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+p, ul{
+  font-size:1.25rem;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,12 +86,17 @@ a {
   @apply text-rose-500;
 }
 
+.input-field{
+  @apply p-4 text-xl border-rose-200 border-2 rounded-md;
+  @apply focus-visible:outline-2 outline-rose-500;
+}
+
+/* Styles for Experience table only */
 .organizations-list {
   border-left: 3px solid rgb(252, 133, 133);
   margin:0;
   padding:0;
 }
-
 .organizations-list li:focus-visible,
 .organizations-list li:hover{
   width:100%;
