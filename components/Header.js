@@ -7,7 +7,7 @@ import webLogo from "../public/logo.svg"
 
 export default function Header({ home }) {
     return (
-        <header className="w-full px-8 py-4 flex justify-between items-center gap-4">
+        <header className="w-full bg-slate-50 px-8 py-4 z-50 flex justify-between items-center gap-4 shadow-md fixed overflow-hidden">
             <Link href="/">
                 <a>
                     <Image src={webLogo} alt="website logo" width={80} height={80} />

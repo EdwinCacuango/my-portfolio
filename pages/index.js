@@ -15,15 +15,17 @@ export default function Home() {
       <Presentation />
       <AboutMe />
       <section className="section-home" id="experience">
-        <div className="flex gap-8 items-center">
-          <h2 className="title-2">02. Experiencia</h2>
-          <div>
-            <Button onClick={(() => setIsLegal(true))}>
-              Legal</Button>
-            <Button stylesAdded="mx-2" onClick={() => setIsLegal(false)}>Tech</Button>
+        <div className="w-full">
+          <div className="flex gap-8 items-center">
+            <h2 className="title-2">02. Experiencia</h2>
+            <div>
+              <Button onClick={(() => setIsLegal(true))}>
+                Legal</Button>
+              <Button stylesAdded="mx-2" onClick={() => setIsLegal(false)}>Tech</Button>
+            </div>
           </div>
+          <ExperienceTable isLegal={isLegal} />
         </div>
-        <ExperienceTable isLegal={isLegal} />
       </section>
       <Projects />
       <FormContact />

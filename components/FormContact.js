@@ -61,40 +61,42 @@ export default function FormContact() {
     };
     return (
         <section className="section-home" id="contact">
-            <h2 className='title-2'>0.4 Contáctame</h2>
-            <hr />
-            <form onSubmit={handleOnSubmit} className="flex flex-col mt-8 gap-4">
-                <label htmlFor="email" className='title-3'>Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    name="_replyto"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.email}
-                    className="input-field h-12"
-                />
-                <label htmlFor="message" className='title-3'>Tu mensaje</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.message}
-                    className="input-field h-40"
-                />
-                <Button type="submit" disabled={status.submitting}>
-                    {!status.submitting
-                        ? !status.submitted
-                            ? 'ENVIAR'
-                            : 'Enviado'
-                        : 'Enviando...'}
-                </Button>
-            </form>
-            {status.info.error && (
-                <div className="error">Error: {status.info.msg}</div>
-            )}
-            {!status.info.error && status.info.msg && <p className='my-4 title-3'>{status.info.msg}</p>}
+            <div className='w-full'>
+                <h2 className='title-2'>0.4 Contáctame</h2>
+                <hr />
+                <form onSubmit={handleOnSubmit} className="flex flex-col mt-8 gap-4">
+                    <label htmlFor="email" className='title-3'>Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="_replyto"
+                        onChange={handleOnChange}
+                        required
+                        value={inputs.email}
+                        className="input-field h-12"
+                    />
+                    <label htmlFor="message" className='title-3'>Tu mensaje</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        onChange={handleOnChange}
+                        required
+                        value={inputs.message}
+                        className="input-field h-40"
+                    />
+                    <Button type="submit" disabled={status.submitting}>
+                        {!status.submitting
+                            ? !status.submitted
+                                ? 'ENVIAR'
+                                : 'Enviado'
+                            : 'Enviando...'}
+                    </Button>
+                </form>
+                {status.info.error && (
+                    <div className="error">Error: {status.info.msg}</div>
+                )}
+                {!status.info.error && status.info.msg && <p className='my-4 title-3'>{status.info.msg}</p>}
+            </div>
         </section>
     );
 };

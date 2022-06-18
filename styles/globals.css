@@ -19,6 +19,7 @@ p, ul{
   font-size:1.25rem;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,18 +28,15 @@ p, ul{
   margin: 0 auto;
 }
 .container {
-  @apply w-9/12 p-12 snap-x snap-mandatory;
+  @apply w-9/12 p-12; 
 }
 .section-home {
-  @apply h-screen py-24 snap-always snap-center;
+  @apply h-screen flex justify-center items-center;
 }
 .card {
   @apply bg-gray-50  rounded-xl p-4 shadow-lg;
 }
 
-.icon-card span img{
-  @apply bg-rose-500;
-}
 
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;

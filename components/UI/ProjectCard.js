@@ -10,8 +10,8 @@ export const ProjectCard = ({ image, titleProject,description, linkSite, gitHubR
                 <p className="text-left px-2">{description}</p>
             </div>
             <div className="mt-4 flex gap-2 items-center">
-                <a clasName="icon-card" src={linkSite}><Image src={site} alt="Linkt to site" /></a>
-                <a clasName="icon-card" src={gitHubRepo}><Image src={GitHub} alt="Link to GitHub repository" /></a>
+                <a className="icon-card" src={linkSite}><Image src={site} alt="Linkt to site" /></a>
+                <a className="icon-card" src={gitHubRepo}><Image src={GitHub} alt="Link to GitHub repository" /></a>
             </div>
         </div>
     )

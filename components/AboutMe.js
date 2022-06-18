@@ -1,7 +1,8 @@
 import Image from "next/image"
 export const AboutMe = () => {
     return (
-        <section className="section-home flex gap-12" id="about">
+        <section className="section-home" id="about">
+            <div className="flex gap-12">
             <div className="max-w-[48%]">
                 <h2 className="title-2">0.1 Sobre mí</h2>
                 <div className="p-2 text-justify">
@@ -27,11 +28,14 @@ export const AboutMe = () => {
                         alt="Edwin Cacuango profile picture"
                         width={400}
                         height={313.75}
+                        priority
                     />
                     <div className="layer"></div>
                 </div>
 
             </div>
+            </div>
+            
         </section>
     )
 }
