@@ -24,6 +24,9 @@ p, ul{
 @tailwind components;
 @tailwind utilities;
 
+.center {
+  margin: 0 auto;
+}
 .container {
   @apply w-9/12 p-12; 
 }
