@@ -37,9 +37,9 @@ p, ul{
   @apply bg-gray-50  rounded-xl p-4 shadow-lg;
 }
 
-
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;
+  @apply hover:opacity-75;
 }
 .title {
   @apply text-7xl;
