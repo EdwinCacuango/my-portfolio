@@ -1,7 +1,7 @@
-import { ProjectCard } from "./UI/ProjectCard"
-import girasoles from "../public/girasol.jpg"
-import sol from "../public/puestadesol.jpeg"
-import stocks from "../public/thestocks.jpg"
+import { ProjectCard } from "../UI/ProjectCard"
+import girasoles from "../../public/girasol.jpg"
+import sol from "../../public/puestadesol.jpeg"
+import stocks from "../../public/thestocks.jpg"
 
 export const Projects = () => {
     return (

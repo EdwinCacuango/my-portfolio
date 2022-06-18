@@ -1,11 +1,11 @@
 import Layout from "../components/layout"
 import ExperienceTable from "../components/ExperienceTable/ExperienceTable"
-import { Presentation } from "../components/Presentation"
-import { AboutMe } from "../components/AboutMe"
+import { Presentation } from "../components/Home/Presentation"
+import { AboutMe } from "../components/Home/AboutMe"
 import { Button } from "../components/UI/Button"
 import { useState } from "react"
-import { Projects } from "../components/Projects"
-import FormContact from "../components/FormContact"
+import { Projects } from "../components/Home/Projects"
+import FormContact from "../components/Home/FormContact"
 
 
 export default function Home() {
