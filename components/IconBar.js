@@ -1,9 +1,8 @@
-import Icons from "../UI/Icons/Icons"
-import "./_IconBar.scss"
-import GithubLogo from "./Imgs/github-logo.svg"
-import TwitterLogo from "./Imgs/twitter-circled.svg"
-import MailLogo from "./Imgs/mail-Icon.svg"
-import LinkedInLogo from "./Imgs/linkedin-circled.svg"
+import Icons from "./UI/Icons"
+import GithubLogo from "../public/Imgs/github-logo.svg"
+import TwitterLogo from "../public/Imgs/twitter-circled.svg"
+import MailLogo from "../public/Imgs/mail-Icon.svg"
+import LinkedInLogo from "../public/Imgs/linkedin-circled.svg"
 const IconBar = () => {
     const socialMedia = [
         {
@@ -14,7 +13,7 @@ const IconBar = () => {
         {
             title: "Email",
             img: MailLogo,
-            url: ""
+            url: "mailto:edwin.fcacuango@gmail.com"
         },
         {
             title: "Twitter",
@@ -27,7 +26,7 @@ const IconBar = () => {
             url:"https://github.com/EdwinCacuango" 
         }           
     ]
-    return (<ul className="icon-bar">
+    return (<ul className="sidebar fixed top-[45%] left-[6%]">
         {socialMedia.map(item => {
             return (
                 <li key={item.title}>

@@ -24,11 +24,33 @@ p, ul{
 @tailwind components;
 @tailwind utilities;
 
+
+.header {
+  grid-area: header;
+}
+.main{
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+
+.general-container {
+  display: grid;
+  width:100%;
+  grid-template-areas: 
+    "header header header header header header"
+    "sidebar main main main main main";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  
+}
+
 .center {
   margin: 0 auto;
 }
 .container {
-  @apply w-9/12 p-12; 
+  @apply py-12 pr-12; 
 }
 .section-home {
   @apply h-screen flex justify-center items-center;
