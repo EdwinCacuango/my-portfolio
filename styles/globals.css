@@ -16,7 +16,7 @@ a {
 }
 
 p, ul{
-  font-size:1.25rem;
+  font-size:1rem;
 }
 
 
@@ -43,7 +43,6 @@ p, ul{
     "sidebar main main main main main";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  
 }
 
 .center {
@@ -58,7 +57,9 @@ p, ul{
 .card {
   @apply bg-gray-50  rounded-xl p-4 shadow-lg;
 }
-
+.icon-card span{
+  @apply w-1;
+}
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;
   @apply hover:opacity-75;
@@ -115,7 +116,7 @@ p, ul{
 }
 
 .input-field{
-  @apply p-4 text-xl border-rose-200 border-2 rounded-md;
+  @apply p-2 text-lg border-rose-200 border-2 rounded-md;
   @apply focus-visible:outline-2 outline-rose-500;
 }
 

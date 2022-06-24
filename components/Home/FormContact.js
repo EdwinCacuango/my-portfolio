@@ -62,9 +62,8 @@ export default function FormContact() {
     return (
         <section className="section-home" id="contact">
             <div className='w-full'>
-                <h2 className='title-2'>0.4 Contáctame</h2>
-                <hr />
-                <form onSubmit={handleOnSubmit} className="flex flex-col mt-8 gap-4">
+                <h2 className='title-2 mt-20'>0.4 Contáctame</h2>
+                <form onSubmit={handleOnSubmit} className="flex flex-col mt-4 gap-3">
                     <label htmlFor="email" className='title-3'>Email</label>
                     <input
                         id="email"
@@ -73,7 +72,7 @@ export default function FormContact() {
                         onChange={handleOnChange}
                         required
                         value={inputs.email}
-                        className="input-field h-12"
+                        className="input-field h-10"
                     />
                     <label htmlFor="message" className='title-3'>Tu mensaje</label>
                     <textarea
@@ -82,7 +81,7 @@ export default function FormContact() {
                         onChange={handleOnChange}
                         required
                         value={inputs.message}
-                        className="input-field h-40"
+                        className="input-field h-40 text-sm"
                     />
                     <Button type="submit" disabled={status.submitting}>
                         {!status.submitting
