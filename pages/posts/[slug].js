@@ -70,7 +70,7 @@ export default function BlogPost({ post }) {
             </div>
             <h1 className={styles.title}>{post.title}</h1>
             <div className={styles.slug}>
-                <img src={post.coverPhoto.url} alt="" />
+                <Image src={post.coverPhoto.url} alt="" />
             </div>
             <div
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
