@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Layout from "../../components/Layout/layout"
+import Layout from "../../components/layout"
 import { GraphQLClient, gql } from "graphql-request"
 import {format} from "date-fns"
 import {es} from "date-fns/locale"
@@ -64,25 +64,23 @@ export default function BlogPost({ post }) {
     const dateP=format (new Date(post.datePublish), `d MMM yyyy`, {locale:es})
     return (
         <Layout>
-            <div className={styles.info}>
+            <div>
                 <p>{post.category[0].name} • {dateP}</p>
             </div>
-            <h1 className={styles.title}>{post.title}</h1>
-            <div className={styles.slug}>
-                <Image src={post.coverPhoto.url} alt="" />
+            <h1>{post.title}</h1>
+            <div className="relative">
+                <Image src={post.coverPhoto.url} alt="" layout="fill"/>
             </div>
             <div
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
-                className={styles.content}
             >
             </div>
-            <div className={styles.author}>
-                <div className={styles.avatar}>
+            <div>
+                <div className="relative">
                     <Image
                         src={post.author.avatar.url}
                         alt={`${post.author.username} picture`}
                         layout="fill"
-                        className={styles.profile}
                     />
                 </div>
                 <div>
