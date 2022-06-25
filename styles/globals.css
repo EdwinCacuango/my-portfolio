@@ -100,6 +100,7 @@ p, ul{
   transition: 0.5s;
   inline-height: 0;
   padding: 0;
+  margin:0;
 }
 
 .layer:hover {

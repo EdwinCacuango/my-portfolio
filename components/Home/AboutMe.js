@@ -25,7 +25,7 @@ export const AboutMe = () => {
                     <div >
                         <div className="relative leading-none">
                             <Image
-                                src="/fotoPerfil.jpg"
+                                src="/fotoPerfil.jpeg"
                                 alt="Edwin Cacuango profile picture"
                                 width={400}
                                 height={313.75}
