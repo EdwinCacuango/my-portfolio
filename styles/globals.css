@@ -26,22 +26,20 @@ p, ul{
 
 
 .header {
-  grid-area: header;
+  grid-row:1/2;
+  grid-colum:1/6;
 }
 .main{
-  grid-area: main;
+  grid-column: 3/7;
 }
 .sidebar {
-  grid-area: sidebar;
+  grid-colum: 1/2;
 }
 
 .general-container {
   display: grid;
   width:100%;
-  grid-template-areas: 
-    "header header header header header header"
-    "sidebar main main main main main";
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: .5fr 0.25fr 1.5fr 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
 
@@ -55,7 +53,7 @@ p, ul{
   @apply h-screen flex justify-center items-center;
 }
 .card {
-  @apply bg-gray-50  rounded-xl p-4 shadow-lg;
+  @apply bg-gray-50  rounded-xl p-3 shadow-lg;
 }
 .icon-card span{
   @apply w-1;
