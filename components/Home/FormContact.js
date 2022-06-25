@@ -62,7 +62,7 @@ export default function FormContact() {
     return (
         <section className="section-home" id="contact">
             <div className='w-full'>
-            <h2 className='title-2 mt-48'>0.4 Contáctame</h2>
+            <h2 className='title-2 mt-36'>0.4 Contáctame</h2>
             <div className='flex'>
                 <div className='w-[60%]'>
                     <form onSubmit={handleOnSubmit} className="flex flex-col mt-4 gap-3">
