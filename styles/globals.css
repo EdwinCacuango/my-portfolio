@@ -37,6 +37,7 @@ p, ul{
 }
 
 .general-container {
+  @apply bg-slate-50;
   display: grid;
   width:100%;
   grid-template-columns: .5fr 0.25fr 1.5fr 1fr 1fr 1fr;
@@ -53,7 +54,7 @@ p, ul{
   @apply h-screen flex justify-center items-center;
 }
 .card {
-  @apply bg-gray-50  rounded-xl p-3 shadow-lg;
+  @apply bg-white  rounded-xl p-3 shadow-lg;
 }
 .icon-card span{
   @apply w-1;
@@ -115,8 +116,8 @@ p, ul{
 }
 
 .input-field{
-  @apply p-2 text-lg border-rose-200 border-2 rounded-md;
-  @apply focus-visible:outline-2 outline-rose-500;
+  @apply p-2 text-lg border-rose-300 border-2 rounded-md;
+  @apply focus-visible:outline-2 outline-rose-400;
 }
 
 /* Styles for Experience table only */
