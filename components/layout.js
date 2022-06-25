@@ -12,9 +12,16 @@ export default function Layout({ children, home }) {
         <div className='general-container'>
             <Header home={home} />
             {home && <IconBar />}
-            <main className='main center container'>
-                {children}
-            </main>
+            {home
+                ?
+                <main className='home-main center container'>
+                    {children}
+                </main>
+                :
+                <main className='main center container'>
+                    {children}
+                </main>
+            }
         </div>
     </div>)
 }

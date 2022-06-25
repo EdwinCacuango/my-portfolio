@@ -29,7 +29,7 @@ p, ul{
   grid-row:1/2;
   grid-colum:1/6;
 }
-.main{
+.home-main{
   grid-column: 3/7;
 }
 .sidebar {
@@ -82,15 +82,17 @@ p, ul{
 .details {
   @apply text-rose-500 text-xl;
 }
-.nav{
+.nav-home, .nav{
   @apply flex content-center items-center gap-4;
 }
-.nav  li{
+.nav-home  li, 
+.nav li{
   @apply p-1 hover:border-b-2 border-b-rose-500;
 }
-.nav li:last-child{
+.nav-home li:last-child{
   @apply hover:border-0;
 }
+
 .layer {
   background: rgba(225, 29, 72, 0.5);
   height: 100%;
@@ -147,4 +149,18 @@ p, ul{
   @apply bg-rose-500 text-slate-50;
 }
 
-
+.presentation-blog{
+  @apply grid grid-cols-2 gap-4;
+}
+.featured{
+  @apply flex gap-2 flex-col;
+}
+.card-featured{
+  @apply flex gap-4 w-full;
+}
+.card-featured div:first-child{
+  @apply w-[40%];
+}
+.card-featured div:last-child{
+  @apply w-[60%] block;
+}

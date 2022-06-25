@@ -49,7 +49,6 @@ export async function getStaticProps() {
 export default function Blog({ posts }) {
   let dates = parseISO(posts[0].datePublish)
 
-  console.log(dates)
   const featured = posts[0]
   const relevant1 = posts[1]
   const relevant2 = posts[2]
@@ -62,40 +61,62 @@ export default function Blog({ posts }) {
   return (
     <Layout>
       <div>
-        <h1>Mi Blog</h1>
-        <p>Un espacio para compartir sobre derecho y tecnología</p>
+        <h1 className="title mt-20">Mi Blog</h1>
+        <p className="text-enphasis">Un espacio para compartir sobre derecho y tecnología</p>
       </div>
-      <div>
+      <div className="presentation-blog">
         <BlogCard
           key={featured.id}
           title={featured.title}
           author={featured.author.username}
-          // coverPhoto={featured.coverPhoto.url}
+          coverPhoto={featured.coverPhoto.url}
           slug={featured.slug}
           datePublished={featuredDate}
           category={featured.category[0].name}
           description={featured.shortDescription}
         />
-        <BlogCard
-          key={relevant1.id}
-          title={relevant1.title}
-          author={relevant1.author.username}
-          // coverPhoto={relevant1.coverPhoto.url}
-          slug={relevant1.slug}
-          datePublished={relevant1Date}
-          category={relevant1.category[0].name}
-          description={relevant1.shortDescription}
-        />
-        <BlogCard
-          key={relevant2.id}
-          title={relevant2.title}
-          author={relevant2.author.username}
-          // coverPhoto={relevant2.coverPhoto.url}
-          slug={relevant2.slug}
-          datePublished={relevant2Date}
-          category={relevant2.category[0].name}
-          description={relevant2.shortDescription}
-        />
+        <div className="featured">
+          <BlogCard
+            key={relevant2.id}
+            title={relevant2.title}
+            author={relevant2.author.username}
+            coverPhoto={relevant2.coverPhoto.url}
+            slug={relevant2.slug}
+            datePublished={relevant2Date}
+            category={relevant2.category[0].name}
+            description={relevant2.shortDescription}
+            titleStyle="title-3"
+            cardStyle="card-featured"
+          />
+          <BlogCard
+            key={relevant2.id}
+            title={relevant2.title}
+            author={relevant2.author.username}
+            coverPhoto={relevant2.coverPhoto.url}
+            slug={relevant2.slug}
+            datePublished={relevant2Date}
+            category={relevant2.category[0].name}
+            description={relevant2.shortDescription}
+            titleStyle="title-3"
+            cardStyle="card-featured"
+          />
+          <BlogCard
+            key={relevant2.id}
+            title={relevant2.title}
+            author={relevant2.author.username}
+            coverPhoto={relevant2.coverPhoto.url}
+            slug={relevant2.slug}
+            datePublished={relevant2Date}
+            category={relevant2.category[0].name}
+            description={relevant2.shortDescription}
+            titleStyle="title-3"
+            cardStyle="card-featured"
+          />
+        </div>
+      </div>
+      <div>
+        <h2>Todos los posts</h2>
+        <div>
         {
           notFeatured.map(post => {
             const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
@@ -103,7 +124,7 @@ export default function Blog({ posts }) {
               key={post.id}
               title={post.title}
               author={post.author.username}
-              // coverPhoto={post.coverPhoto.url}
+              coverPhoto={post.coverPhoto.url}
               slug={post.slug}
               datePublished={dateP}
               category={post.category[0].name}
@@ -111,13 +132,20 @@ export default function Blog({ posts }) {
             />
           })
         }
+        </div>
       </div>
-      <div>
-        <h2>Todos los posts</h2>
+      {/* <div>
+        
+        
+        
+        
+      </div> */}
+      {/* <div>
+        
         {
 
         }
-      </div>
+      </div> */}
     </Layout>
   )
 }
