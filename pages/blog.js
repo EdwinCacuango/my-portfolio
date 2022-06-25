@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from "graphql-request"
 import BlogCard from "../components/BlogCard"
 import Layout from '../components/layout'
-import { format, parseISO } from "date-fns"
+import { format, formatDistance, formatDistanceToNow, parseISO } from "date-fns"
 import { es } from "date-fns/locale"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
@@ -47,14 +47,16 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts }) {
-  const featured = posts[0]
-  const relevant1 = posts[1]
-  const relevant2 = posts[2]
+  const sorted= posts.sort((a, b)=> (a.datePublish>b.datePublish)? -1: 1)
+
+  const featured = sorted[0]
+  const relevant1 = sorted[1]
+  const relevant2 = sorted[2]
 
   //DATES FOR STYLED CARDS
-  const featuredDate = format(new Date(featured.datePublish), `d MMM yyyy`, { locale: es })
-  const relevant1Date = format(new Date(relevant1.datePublish), `d MMM yyyy`, { locale: es })
-  const relevant2Date = format(new Date(relevant2.datePublish), `d MMM yyyy`, { locale: es })
+  const featuredDate = formatDistanceToNow(new Date(featured.datePublish),  { locale: es })
+  const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish),  { locale: es })
+  const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish),  { locale: es })
   return (
     <Layout>
       <div>
@@ -69,7 +71,7 @@ export default function Blog({ posts }) {
             author={featured.author.username}
             coverPhoto={featured.coverPhoto.url}
             slug={featured.slug}
-            datePublished={featuredDate}
+            datePublished={`hace ${featuredDate}`}
             category={featured.category[0].name}
             description={featured.shortDescription}
             titleStyle="title-3"
@@ -82,7 +84,7 @@ export default function Blog({ posts }) {
             author={relevant1.author.username}
             coverPhoto={relevant1.coverPhoto.url}
             slug={relevant1.slug}
-            datePublished={relevant1Date}
+            datePublished={`hace ${relevant1Date}`}
             category={relevant1.category[0].name}
             description={relevant1.shortDescription}
             titleStyle="title-4"
@@ -94,7 +96,7 @@ export default function Blog({ posts }) {
             author={relevant2.author.username}
             coverPhoto={relevant2.coverPhoto.url}
             slug={relevant2.slug}
-            datePublished={relevant2Date}
+            datePublished={`hace ${relevant2Date}`}
             category={relevant2.category[0].name}
             description={relevant2.shortDescription}
             titleStyle="title-4"
@@ -105,7 +107,7 @@ export default function Blog({ posts }) {
         <h2 className="title-2">Todos los posts</h2>
         <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">
           {
-            posts.map(post => {
+            sorted.map(post => {
               const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
               return <BlogCard
                 key={post.id}
