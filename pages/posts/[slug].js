@@ -3,7 +3,6 @@ import Layout from "../../components/Layout/layout"
 import { GraphQLClient, gql } from "graphql-request"
 import {format} from "date-fns"
 import {es} from "date-fns/locale"
-import styles from "../../styles/slug.module.css"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
 

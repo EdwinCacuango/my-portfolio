@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../UI/Button';
 import axios from 'axios';
+import Image from 'next/image';
 
 export default function FormContact() {
     const [status, setStatus] = useState({
@@ -98,8 +99,8 @@ export default function FormContact() {
                     )}
                     {!status.info.error && status.info.msg && <p className='my-4 title-3'>{status.info.msg}</p>}
                 </div>
-                <div className='w-[40%]'>
-                    <img src="/email-foto.svg" alt="A person with a magnet catching emails" />
+                <div className='w-[40%] relative'>
+                    <Image src="/email-foto.svg" alt="A person with a magnet catching emails" layout="fill" />
                 </div>
             </div>
             </div>
