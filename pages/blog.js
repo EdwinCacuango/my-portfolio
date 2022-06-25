@@ -47,12 +47,9 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts }) {
-  let dates = parseISO(posts[0].datePublish)
-
   const featured = posts[0]
   const relevant1 = posts[1]
   const relevant2 = posts[2]
-  const notFeatured = posts.slice(3)
 
   //DATES FOR STYLED CARDS
   const featuredDate = format(new Date(featured.datePublish), `d MMM yyyy`, { locale: es })
@@ -64,28 +61,31 @@ export default function Blog({ posts }) {
         <h1 className="title mt-20">Mi Blog</h1>
         <p className="text-enphasis">Un espacio para compartir sobre derecho y tecnología</p>
       </div>
-      <div className="presentation-blog">
-        <BlogCard
-          key={featured.id}
-          title={featured.title}
-          author={featured.author.username}
-          coverPhoto={featured.coverPhoto.url}
-          slug={featured.slug}
-          datePublished={featuredDate}
-          category={featured.category[0].name}
-          description={featured.shortDescription}
-        />
-        <div className="featured">
+      <section className="presentation-blog">
+        <div className="last-post">
           <BlogCard
-            key={relevant2.id}
-            title={relevant2.title}
-            author={relevant2.author.username}
-            coverPhoto={relevant2.coverPhoto.url}
-            slug={relevant2.slug}
-            datePublished={relevant2Date}
-            category={relevant2.category[0].name}
-            description={relevant2.shortDescription}
+            key={featured.id}
+            title={featured.title}
+            author={featured.author.username}
+            coverPhoto={featured.coverPhoto.url}
+            slug={featured.slug}
+            datePublished={featuredDate}
+            category={featured.category[0].name}
+            description={featured.shortDescription}
             titleStyle="title-3"
+            cardStyle="post"
+          />
+        </div>        
+          <BlogCard
+            key={relevant1.id}
+            title={relevant1.title}
+            author={relevant1.author.username}
+            coverPhoto={relevant1.coverPhoto.url}
+            slug={relevant1.slug}
+            datePublished={relevant1Date}
+            category={relevant1.category[0].name}
+            description={relevant1.shortDescription}
+            titleStyle="title-4"
             cardStyle="card-featured"
           />
           <BlogCard
@@ -97,55 +97,31 @@ export default function Blog({ posts }) {
             datePublished={relevant2Date}
             category={relevant2.category[0].name}
             description={relevant2.shortDescription}
-            titleStyle="title-3"
+            titleStyle="title-4"
             cardStyle="card-featured"
           />
-          <BlogCard
-            key={relevant2.id}
-            title={relevant2.title}
-            author={relevant2.author.username}
-            coverPhoto={relevant2.coverPhoto.url}
-            slug={relevant2.slug}
-            datePublished={relevant2Date}
-            category={relevant2.category[0].name}
-            description={relevant2.shortDescription}
-            titleStyle="title-3"
-            cardStyle="card-featured"
-          />
+      </section>
+      <section className="mt-4">
+        <h2 className="title-2">Todos los posts</h2>
+        <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">
+          {
+            posts.map(post => {
+              const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
+              return <BlogCard
+                key={post.id}
+                title={post.title}
+                author={post.author.username}
+                coverPhoto={post.coverPhoto.url}
+                slug={post.slug}
+                datePublished={dateP}
+                category={post.category[0].name}
+                description={post.shortDescription}
+                cardStyle="normal-blog"
+              />
+            })
+          }
         </div>
-      </div>
-      <div>
-        <h2>Todos los posts</h2>
-        <div>
-        {
-          notFeatured.map(post => {
-            const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
-            return <BlogCard
-              key={post.id}
-              title={post.title}
-              author={post.author.username}
-              coverPhoto={post.coverPhoto.url}
-              slug={post.slug}
-              datePublished={dateP}
-              category={post.category[0].name}
-              description={post.shortDescription}
-            />
-          })
-        }
-        </div>
-      </div>
-      {/* <div>
-        
-        
-        
-        
-      </div> */}
-      {/* <div>
-        
-        {
-
-        }
-      </div> */}
+      </section>
     </Layout>
   )
 }

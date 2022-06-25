@@ -11,11 +11,13 @@ const BlogCard = ({ cardStyle, title, titleStyle, coverPhoto, datePublished, slu
                     layout="fill"
                 />
             </div>
-            <div>
-                <p><span>{category}</span> • {datePublished}</p>
+            <div className="mt-2">
+                <p className="text-xs my-2"><span className="bg-rose-500 px-3 py-1 rounded-xl text-slate-100">{category}</span> • {datePublished}</p>
                 <h2 className={titleStyle}>{title}</h2>
-                <p>{description}</p>
-                <Link href={`/posts/${slug}`}><a>Seguir leyendo →</a></Link>
+                <p className="text-xs">{description}</p>
+                <div className="text-sm text-right">
+                    <Link href={`/posts/${slug}`}><a>Seguir leyendo →</a></Link>
+                </div>
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ export default function Layout({ children, home }) {
                     {children}
                 </main>
                 :
-                <main className='main center container'>
+                <main className='main center container pl-12'>
                     {children}
                 </main>
             }
