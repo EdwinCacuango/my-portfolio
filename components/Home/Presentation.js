@@ -12,7 +12,7 @@ export const Presentation = () => {
           <Button stylesAdded="my-3"><a href="/#contact">Escríbeme</a></Button>
         </div>
         <div className="w-[50%]">
-          <img src="/coder-img.svg" alt=""/>
+          <img src="/coder-img.svg" alt="A person coding"/>
         </div>
       </div>
 
