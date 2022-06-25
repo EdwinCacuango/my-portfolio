@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from "graphql-request"
 import BlogCard from "../components/BlogCard"
 import Layout from '../components/layout'
-import { format, formatDistance, formatDistanceToNow, parseISO } from "date-fns"
+import { format, formatDistanceToNow } from "date-fns"
 import { es } from "date-fns/locale"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
