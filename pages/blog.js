@@ -60,10 +60,10 @@ export default function Blog({ posts }) {
   return (
     <Layout>
       <div>
-        <h1 className="title mt-20">Mi Blog</h1>
-        <p className="text-enphasis">Un espacio para compartir sobre derecho y tecnología</p>
+        <h1 className="title mt-16 text-center">Mi Blog</h1>
+        <p className="text-enphasis text-center">Un espacio para compartir sobre derecho y tecnología</p>
       </div>
-      <section className="presentation-blog">
+      <section className="presentation-blog center max-w-[75%] mt-4">
         <div className="last-post">
           <BlogCard
             key={featured.id}
@@ -74,7 +74,6 @@ export default function Blog({ posts }) {
             datePublished={`hace ${featuredDate}`}
             category={featured.category[0].name}
             description={featured.shortDescription}
-            titleStyle="title-3"
             cardStyle="post"
           />
         </div>        

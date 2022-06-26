@@ -15,7 +15,7 @@ const BlogCard = ({ cardStyle, title, titleStyle, coverPhoto, datePublished, slu
                 <p className="text-xs my-2"><span className="bg-rose-500 px-3 py-1 rounded-xl text-slate-100">{category}</span> • {datePublished}</p>
                 <div className="place-self-center">
                     <Link href={`/posts/${slug}`}><h3 className={`${titleStyle} hover:text-rose-400`}>{title}</h3></Link>
-                    <p className="text-base">{description}</p>
+                    <p className="text-xs">{description}</p>
 
                 </div>
                 <div className="text-sm mx-3 text-right text-rose-500 hover:text-rose-300">
