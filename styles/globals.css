@@ -202,3 +202,45 @@ ul {
   max-height:auto;
   object-fit:cover;
 }
+
+/* //Content embed */
+.content-import{
+  @apply text-justify max-w-[75%] center;
+}
+
+.content-import h2{
+  @apply title-2 my-6;
+}
+.content-import h3{
+  @apply title-3;
+}
+.content-import p{
+  @apply my-3 mx-2 text-xl;
+}
+
+.content-import blockquote{
+  @apply relative mx-6 p-4 text-xl italic border-l-4 bg-rose-50 text-neutral-600 border-rose-500;
+}
+
+.content-import blockquote::before{
+  content: ",,";
+  position: absolute;
+  @apply font-serif;
+  font-size:4rem;
+  top: 0;
+  left:2;
+}
+.content-import blockquote em{
+  @apply px-12;
+}
+.cover-photo{
+
+}
+.cover-photo span img{
+  margin:auto;
+  min-width:auto;
+  min-width:auto;
+  max-width:auto;
+  max-height:auto;
+  object-fit:cover;
+}
