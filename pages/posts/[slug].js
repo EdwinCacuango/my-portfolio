@@ -64,14 +64,14 @@ export default function BlogPost({ post }) {
     const dateP=format (new Date(post.datePublish), `d MMM yyyy`, {locale:es})
     return (
         <Layout>
-            <div>
-                <p>{post.category[0].name} • {dateP}</p>
-            </div>
-            <h1>{post.title}</h1>
-            <div className="relative">
+            <h1 className="title text-center mt-20">{post.title}</h1>
+            <div className="my-8 w-8/12 h-1/12 cover-photo">
                 <Image src={post.coverPhoto.url} alt="" layout="fill"/>
             </div>
-            <div
+            <div className="text-center my-8">
+                <p className="text-base my-2"><span className="bg-rose-500 px-4 py-1.5 text-slate-100">{post.category[0].name}</span> • {dateP}</p>
+            </div>
+            <div className="content-import mt-2"
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
             >
             </div>
