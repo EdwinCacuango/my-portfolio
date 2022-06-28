@@ -73,8 +73,7 @@ export default function Blog({ posts }) {
             slug={featured.slug}
             datePublished={`hace ${featuredDate}`}
             category={featured.category[0].name}
-            description={featured.shortDescription}
-            cardStyle="post"
+            description={featured.shortDescription}   
           />
         </div>        
           <BlogCard

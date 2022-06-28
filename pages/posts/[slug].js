@@ -1,5 +1,5 @@
-import Image from "next/image"
 import Layout from "../../components/layout"
+import TableContent from "../../components/tableContent"
 import { GraphQLClient, gql } from "graphql-request"
 import {format} from "date-fns"
 import {es} from "date-fns/locale"
@@ -62,32 +62,21 @@ export async function getStaticProps({ params }) {
 }
 export default function BlogPost({ post }) {
     const dateP=format (new Date(post.datePublish), `d MMM yyyy`, {locale:es})
+    console.log(post.content.html)
     return (
         <Layout>
+            
             <h1 className="title text-center mt-20">{post.title}</h1>
-            <div className="my-8 w-8/12 h-1/12 cover-photo">
-                <Image src={post.coverPhoto.url} alt="" layout="fill"/>
+            <div className="my-8">
+               <img src={post.coverPhoto.url}/>
             </div>
+            <TableContent />
             <div className="text-center my-8">
                 <p className="text-base my-2"><span className="bg-rose-500 px-4 py-1.5 text-slate-100">{post.category[0].name}</span> • {dateP}</p>
             </div>
             <div className="content-import mt-2"
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
             >
-            </div>
-            <div>
-                <div className="relative">
-                    <Image
-                        src={post.author.avatar.url}
-                        alt={`${post.author.username} picture`}
-                        layout="fill"
-                    />
-                </div>
-                <div>
-                    Creado por:
-                    <p>{post.author.username}</p>
-                </div>
-
             </div>
         </Layout>
     )

@@ -236,13 +236,4 @@ ul {
 .content-import blockquote em {
   @apply px-12;
 }
-.cover-photo {
-}
-.cover-photo span img {
-  margin: auto;
-  min-width: auto;
-  min-width: auto;
-  max-width: auto;
-  max-height: auto;
-  object-fit: cover;
-}
+
