@@ -1,8 +1,8 @@
 import Layout from "../../components/layout"
 import TableContent from "../../components/tableContent"
 import { GraphQLClient, gql } from "graphql-request"
-import {format} from "date-fns"
-import {es} from "date-fns/locale"
+import { format } from "date-fns"
+import { es } from "date-fns/locale"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
 
@@ -18,6 +18,7 @@ const QUERY = gql`
             }
           }
         slug,
+        shortDescription,
         content{
          html
        }
@@ -61,20 +62,20 @@ export async function getStaticProps({ params }) {
     }
 }
 export default function BlogPost({ post }) {
-    const dateP=format (new Date(post.datePublish), `d MMM yyyy`, {locale:es})
-    console.log(post.content.html)
+    const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
     return (
         <Layout>
-            
-            <h1 className="title text-center mt-20">{post.title}</h1>
-            <div className="my-8">
-               <img src={post.coverPhoto.url}/>
+            <h1 className="hidden title sm:text-center mt-7 sm:mt-20 ">{post.title}</h1>
+            <p className="hidden my-10">{post.shortDescription}</p>
+            <div className="mt-12 my-4">
+                <img src={post.coverPhoto.url} alt=""/>
             </div>
-            <TableContent />
-            <div className="text-center my-8">
+            <h1 className="title">{post.title}</h1>
+            <p className="my-2">{post.shortDescription}</p>
+            <div className="sm:text-center my-4 sm:my-8">
                 <p className="text-base my-2"><span className="bg-rose-500 px-4 py-1.5 text-slate-100">{post.category[0].name}</span> • {dateP}</p>
             </div>
-            <div className="content-import mt-2"
+            <div className="content-import mt-2 border-t-2 pt-3"
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
             >
             </div>

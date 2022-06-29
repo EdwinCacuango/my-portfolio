@@ -30,7 +30,8 @@ ul {
 }
 .main {
   grid-column: 1/7;
-  @apply w-full min-h-screen;
+  @apply sm:w-full sm:min-h-screen;
+
 }
 .home-main {
   grid-column: 3/7;
@@ -51,7 +52,7 @@ ul {
   margin: 0 auto;
 }
 .container {
-  @apply py-12 pr-12;
+  @apply sm:py-12 py-6 sm:pr-12 pr-6;
 }
 .section-home {
   @apply h-screen flex justify-center items-center;
@@ -67,15 +68,15 @@ ul {
   @apply hover:opacity-75;
 }
 .title {
-  @apply text-7xl;
+  @apply sm:text-7xl text-5xl font-semibold;
 }
 
 .title-2 {
-  @apply text-5xl mb-4;
+  @apply sm:text-5xl text-3xl mb-4;
 }
 
 .title-3 {
-  @apply text-3xl mb-2;
+  @apply sm:text-3xl text-2xl mb-2;
 }
 
 .title-4 {
@@ -216,7 +217,7 @@ ul {
 
 /* //Content embed */
 .content-import {
-  @apply text-justify max-w-[75%] center;
+  @apply text-left sm:text-justify sm:max-w-[75%] center;
 }
 
 .content-import h2 {
@@ -226,14 +227,16 @@ ul {
   @apply title-3;
 }
 .content-import p {
-  @apply my-3 mx-2 text-xl;
+  @apply my-1.5 sm:my-3 sm:mx-2 sm:text-xl text-base;
 }
 
 .content-import blockquote {
-  @apply relative mx-6 p-4 text-xl italic border-l-4 bg-rose-50 text-neutral-600 border-rose-500;
+  @apply relative mx-1 sm:mx-6 p-2 sm:p-4 sm:text-xl italic border-l-4 bg-rose-50 text-neutral-600 border-rose-500;
 }
 
 .content-import blockquote em {
   @apply px-12;
 }
-
+.content-import ol{
+  @apply list-decimal pl-8;
+}
