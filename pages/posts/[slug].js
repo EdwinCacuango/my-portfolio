@@ -98,9 +98,7 @@ export default function BlogPost({ post }) {
                 <p className="my-2">{post.shortDescription}</p>
                 {/* Author, date, category */}
                 <p className="text-base">
-                    <span className="text-rose-500 italic">
-                        Autor:
-                    </span>
+                    <span className="text-rose-500 italic">Autor: </span>
                     {post.author.username}
                 </p>
                 <p className="my-6">
