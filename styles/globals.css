@@ -225,7 +225,7 @@ ul {
   @apply title-3;
 }
 .content-import p {
-  @apply my-1.5 mx-2 text-base;
+  @apply my-1.5 text-base;
   @apply lg:my-3 lg:text-lg;
 }
 .content-import blockquote {
