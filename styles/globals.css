@@ -31,7 +31,6 @@ ul {
 .main {
   grid-column: 1/7;
   @apply sm:w-full sm:min-h-screen;
-
 }
 .home-main {
   grid-column: 3/7;
@@ -68,19 +67,19 @@ ul {
   @apply hover:opacity-75;
 }
 .title {
-  @apply sm:text-7xl text-5xl font-semibold;
+  @apply lg:text-7xl text-5xl font-semibold lg:leading-tight;
 }
 
 .title-2 {
-  @apply sm:text-5xl text-3xl mb-4;
+  @apply lg:text-5xl md:text-4xl text-3xl mb-4;
 }
 
 .title-3 {
-  @apply sm:text-3xl text-2xl mb-2;
+  @apply lg:text-3xl text-2xl mb-2;
 }
 
 .title-4 {
-  @apply text-lg mb-2 leading-6;
+  @apply lg:text-lg mb-2 leading-6;
 }
 
 .text-enphasis {
@@ -215,9 +214,9 @@ ul {
   object-fit: contain;
 }
 
-/* //Content embed */
+/* //Content embed in blog */
 .content-import {
-  @apply text-left sm:text-justify sm:max-w-[75%] center;
+  @apply text-left sm:text-justify lg:max-w-[90%] center;
 }
 .content-import h2 {
   @apply title-2 my-6;
@@ -226,14 +225,13 @@ ul {
   @apply title-3;
 }
 .content-import p {
-  @apply my-1.5 sm:my-3 sm:mx-2 sm:text-xl text-base;
+  @apply my-1.5 mx-2 text-base;
+  @apply lg:my-3 lg:text-lg;
 }
 .content-import blockquote {
-  @apply relative mx-1 sm:mx-6 p-2 sm:p-4 sm:text-xl italic border-l-4 bg-rose-50 text-neutral-600 border-rose-500;
+  @apply my-3 ml-6 py-2 px-4 italic border-l-4 bg-rose-50 text-base text-neutral-600 border-rose-500;
+  @apply lg:my-5 lg:mx-12 lg:py-4 lg:px-8 text-xl
 }
-.content-import blockquote em {
-  @apply px-12;
-}
-.content-import ol{
+.content-import ol {
   @apply list-decimal pl-8;
 }

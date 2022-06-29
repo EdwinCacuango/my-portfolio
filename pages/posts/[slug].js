@@ -69,16 +69,16 @@ export default function BlogPost({ post }) {
             <div className="hidden lg:block">
                 <h1 className="title lg:mt-20 ">{post.title}</h1>
                 <p className="my-4 text-2xl">{post.shortDescription}</p>
-                <div className="my-4">
+                <div className="my-8">
                     <p className="text-xl my-4">
                         <span className="bg-rose-500 px-4 py-1.5 text-slate-100">
                             {post.category[0].name}
                         </span> • {dateP}
                     </p>
-                </div>
+                </div>  
             </div>
             <div className="mt-16 lg:mt-8 flex justify-center w-full">
-                <img src={post.coverPhoto.url} alt="" className="w-[100%]" />
+                <img src={post.coverPhoto.url} alt="" className="w-[100%] lg:w-[90%]" />
             </div>
             {/* Encabezado para movil */}
             <div className="lg:hidden">
