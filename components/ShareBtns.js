@@ -16,7 +16,7 @@ export const ShareBtns = ({ title, slug, category }) => {
       title: "Twitter",
       img: "/Imgs/twitter-circled.svg",
       url: `https://twitter.com/intent/tweet?text=${parsedToURL(title, " ", "%20")}
-        &url=https%3A%2F%2Fedwinc.dev%2Fposts%2F${parsedToURL(slug, "-", "%2D")}&hashtags=${category}`
+        &url=https%3A%2F%2Fedwinc.dev%2Fposts%2F${parsedToURL(slug, "-", "%2D")}&hashtags=${category.toLowerCase()}`
     },
     {
       title: "WhatsApp",
