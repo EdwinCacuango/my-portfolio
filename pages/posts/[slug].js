@@ -65,15 +65,32 @@ export default function BlogPost({ post }) {
     const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
     return (
         <Layout>
-            <h1 className="hidden title sm:text-center mt-7 sm:mt-20 ">{post.title}</h1>
-            <p className="hidden my-10">{post.shortDescription}</p>
-            <div className="mt-12 my-4">
-                <img src={post.coverPhoto.url} alt=""/>
+            {/* Encabezado para laptos en adelante */}
+            <div className="hidden lg:block">
+                <h1 className="title lg:mt-20 ">{post.title}</h1>
+                <p className="my-4 text-2xl">{post.shortDescription}</p>
+                <div className="my-4">
+                    <p className="text-xl my-4">
+                        <span className="bg-rose-500 px-4 py-1.5 text-slate-100">
+                            {post.category[0].name}
+                        </span> • {dateP}
+                    </p>
+                </div>
             </div>
-            <h1 className="title">{post.title}</h1>
-            <p className="my-2">{post.shortDescription}</p>
-            <div className="sm:text-center my-4 sm:my-8">
-                <p className="text-base my-2"><span className="bg-rose-500 px-4 py-1.5 text-slate-100">{post.category[0].name}</span> • {dateP}</p>
+            <div className="mt-16 lg:mt-8 flex justify-center w-full">
+                <img src={post.coverPhoto.url} alt="" className="w-[100%]" />
+            </div>
+            {/* Encabezado para movil */}
+            <div className="lg:hidden">
+                <h1 className="title mt-4">{post.title}</h1>
+                <p className="my-2">{post.shortDescription}</p>
+                <div className="my-4">
+                    <p className="text-base my-2">
+                        <span className="bg-rose-500 px-4 py-1.5 text-slate-100">
+                            {post.category[0].name}
+                        </span> • {dateP}
+                    </p>
+                </div>
             </div>
             <div className="content-import mt-2 border-t-2 pt-3"
                 dangerouslySetInnerHTML={{ __html: post.content.html }}

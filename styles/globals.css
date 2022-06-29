@@ -219,7 +219,6 @@ ul {
 .content-import {
   @apply text-left sm:text-justify sm:max-w-[75%] center;
 }
-
 .content-import h2 {
   @apply title-2 my-6;
 }
@@ -229,11 +228,9 @@ ul {
 .content-import p {
   @apply my-1.5 sm:my-3 sm:mx-2 sm:text-xl text-base;
 }
-
 .content-import blockquote {
   @apply relative mx-1 sm:mx-6 p-2 sm:p-4 sm:text-xl italic border-l-4 bg-rose-50 text-neutral-600 border-rose-500;
 }
-
 .content-import blockquote em {
   @apply px-12;
 }
