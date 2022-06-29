@@ -1,8 +1,9 @@
 import Layout from "../../components/layout"
-import TableContent from "../../components/tableContent"
+import { ShareBtns } from "../../components/ShareBtns"
 import { GraphQLClient, gql } from "graphql-request"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
+import IconBar from "../../components/IconBar"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
 
@@ -75,7 +76,7 @@ export default function BlogPost({ post }) {
                             {post.category[0].name}
                         </span> • {dateP}
                     </p>
-                </div>  
+                </div>
             </div>
             <div className="mt-16 lg:mt-8 flex justify-center w-full">
                 <img src={post.coverPhoto.url} alt="" className="w-[100%] lg:w-[90%]" />
@@ -96,8 +97,22 @@ export default function BlogPost({ post }) {
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
             >
             </div>
+            <div className="md:flex justify-between border-t-2 mt-8 pt-3 px-8">              
+                {/* Autor */}
+                <div className="flex gap-4 items-center">
+                    <div className="w-28 ">
+                        <img src="/fotoPerfil-cuadrada.jpg"
+                            alt="Foto de perfil"
+                            className="object-contain rounded-full w-full"
+                        />
+                    </div>
+                    <div>
+                        <p className="lg:text-xl">Edwin Cacuango</p>
+                        <p>Autor</p>
+                    </div>
+                    <ShareBtns title={post.title} slug={post.slug} category={post.category[0].name} />
+                </div>
+            </div>
         </Layout>
     )
 }
-
-//el innerHTML debe ir dentro del div, no como un hijo, sino como un atributo. Forma más rara pero funcionó
