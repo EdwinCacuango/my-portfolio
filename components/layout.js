@@ -11,7 +11,7 @@ export default function Layout({ children, home }) {
         </Head>
         <div className='general-container'>
             <Header home={home} />
-            {home && <IconBar />}
+            {home && <IconBar className="sidebar fixed top-[45%] left-[6%]" />}
             {home
                 ?
                 <main className='home-main center container'>

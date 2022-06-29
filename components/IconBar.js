@@ -3,7 +3,7 @@ import GithubLogo from "../public/Imgs/github-logo.svg"
 import TwitterLogo from "../public/Imgs/twitter-circled.svg"
 import MailLogo from "../public/Imgs/mail-Icon.svg"
 import LinkedInLogo from "../public/Imgs/linkedin-circled.svg"
-const IconBar = () => {
+const IconBar = ({className}) => {
     const socialMedia = [
         {
             title: "LinkedIn",
@@ -26,7 +26,7 @@ const IconBar = () => {
             url:"https://github.com/EdwinCacuango" 
         }           
     ]
-    return (<ul className="sidebar fixed top-[45%] left-[6%]">
+    return (<ul className={className}>
         {socialMedia.map(item => {
             return (
                 <li key={item.title}>
