@@ -100,7 +100,7 @@ export default function FormContact() {
                     {!status.info.error && status.info.msg && <p className='my-4 title-3'>{status.info.msg}</p>}
                 </div>
                 <div className='w-[40%] relative'>
-                    <Image src="/email-foto.svg" alt="A person with a magnet catching emails" layout="fill" />
+                    <Image src="/email-foto.svg" alt="A person with a magnet catching emails" layout="fill" priority/>
                 </div>
             </div>
             </div>

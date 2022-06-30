@@ -89,9 +89,11 @@ export default function BlogPost({ post }) {
                     </div>
                 </div>
             </div>
-            <div className="mt-16 lg:mt-8 flex justify-center w-full">
+            {/* Cover photo */}
+            <div className="mt-24 lg:mt-8 flex justify-center w-full">
                 <img src={post.coverPhoto.url} alt="" className="w-[100%] lg:w-[90%]" />
             </div>
+
             {/* Encabezado para movil */}
             < div className="lg:hidden">
                 <h1 className="title mt-4">{post.title}</h1>
