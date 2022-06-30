@@ -1,81 +1,91 @@
-import { GraphQLClient, gql } from "graphql-request"
-import BlogCard from "../components/BlogCard"
-import Layout from '../components/layout'
-import { format, formatDistanceToNow } from "date-fns"
-import { es } from "date-fns/locale"
+import { GraphQLClient, gql } from "graphql-request";
+import BlogCard from "../components/BlogCard";
+import Layout from "../components/layout";
+import { format, formatDistanceToNow } from "date-fns";
+import { es } from "date-fns/locale";
 
-const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
+const graphcms = new GraphQLClient(
+  "https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master"
+);
 
 const QUERY = gql`
   {
     posts {
-      id, 
-      title, 
-      datePublish, 
-      slug,
+      id
+      title
+      datePublish
+      slug
       shortDescription
       category {
         ... on Category {
           name
         }
       }
-      content{
-         html
-       }
-      author{
-         username,
-         avatar{
-             url
-         }
-
+      content {
+        html
       }
-      coverPhoto{
-         url
-       }
-      
-     }
+      author {
+        username
+        avatar {
+          url
+        }
+      }
+      coverPhoto {
+        url
+      }
+    }
   }
-`
+`;
 export async function getStaticProps() {
-  const { posts } = await graphcms.request(QUERY)
+  const { posts } = await graphcms.request(QUERY);
   return {
     props: {
-      posts
+      posts,
     },
     revalidate: 10,
-  }
+  };
 }
 
 export default function Blog({ posts }) {
-  const sorted= posts.sort((a, b)=> (a.datePublish>b.datePublish)? -1: 1)
+  const sorted = posts.sort((a, b) => (a.datePublish > b.datePublish ? -1 : 1));
 
-  const featured = sorted[0]
-  const relevant1 = sorted[1]
-  const relevant2 = sorted[2]
+  const featured = sorted[0];
+  const relevant1 = sorted[1];
+  const relevant2 = sorted[2];
 
   //DATES FOR STYLED CARDS
-  const featuredDate = formatDistanceToNow(new Date(featured.datePublish),  { locale: es })
-  const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish),  { locale: es })
-  const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish),  { locale: es })
+  const featuredDate = formatDistanceToNow(new Date(featured.datePublish), {
+    locale: es,
+  });
+  const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish), {
+    locale: es,
+  });
+  const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish), {
+    locale: es,
+  });
   return (
     <Layout>
       <div>
-        <h1 className="title mt-16 text-center">Mi Blog</h1>
-        <p className="text-enphasis text-center">Un espacio para compartir sobre derecho y tecnología</p>
+        <h1 className="title mt-24 md:text-center">Mi Blog</h1>
+        <p className=" text-lg my-2 md:text-enphasis md:text-center">
+          Un espacio para compartir sobre derecho y tecnología
+        </p>
       </div>
-      <section className="presentation-blog center max-w-[75%] mt-4">
-        <div className="last-post">
-          <BlogCard
-            key={featured.id}
-            title={featured.title}
-            author={featured.author.username}
-            coverPhoto={featured.coverPhoto.url}
-            slug={featured.slug}
-            datePublished={`hace ${featuredDate}`}
-            category={featured.category[0].name}
-            description={featured.shortDescription}   
-          />
-        </div>        
+      <section className="center md:max-w-[85%] mt-8">
+        <h2 className="title-2">Recién agregados</h2>
+        <div className="presentation-blog ">
+          <div className="last-post">
+            <BlogCard
+              key={featured.id}
+              title={featured.title}
+              author={featured.author.username}
+              coverPhoto={featured.coverPhoto.url}
+              slug={featured.slug}
+              datePublished={`hace ${featuredDate}`}
+              category={featured.category[0].name}
+              description={featured.shortDescription}
+            />
+          </div>
           <BlogCard
             key={relevant1.id}
             title={relevant1.title}
@@ -100,14 +110,17 @@ export default function Blog({ posts }) {
             titleStyle="title-4"
             cardStyle="card-featured"
           />
+        </div>
       </section>
       <section className="mt-4">
         <h2 className="title-2">Todos los posts</h2>
-        <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">
-          {
-            sorted.map(post => {
-              const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
-              return <BlogCard
+        <div className="md:grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">
+          {sorted.map((post) => {
+            const dateP = format(new Date(post.datePublish), `d MMM yyyy`, {
+              locale: es,
+            });
+            return (
+              <BlogCard
                 key={post.id}
                 title={post.title}
                 author={post.author.username}
@@ -117,12 +130,12 @@ export default function Blog({ posts }) {
                 category={post.category[0].name}
                 description={post.shortDescription}
                 cardStyle="normal-blog"
+                titleStyle="title-3"
               />
-            })
-          }
+            );
+          })}
         </div>
       </section>
     </Layout>
-  )
+  );
 }
-
