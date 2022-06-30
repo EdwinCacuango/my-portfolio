@@ -97,6 +97,7 @@ ul {
 .nav li {
   @apply p-1 hover:border-b-2 border-b-rose-500;
 }
+.nav li:last-child, 
 .nav-home li:last-child {
   @apply hover:border-0;
 }

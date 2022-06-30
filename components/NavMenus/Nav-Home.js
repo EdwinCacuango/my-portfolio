@@ -15,7 +15,7 @@ export default function NavHome({activeState}) {
                     <li><Link href="/#projects"><a>Proyectos</a></Link></li>
                     <li><Link href="/#contact"><a>Contáctame</a></Link></li>
                     <li><Link href="/blog"><a>Blog</a></Link></li>
-                    <li className="nav-outeffect">
+                    <li>
                         <Button>
                             <a href="https://drive.google.com/file/d/1caQOH7CSlL-d3gYfRNUyNPYBWtpWAHks/view?usp=sharing" rel="noreferrer" target="_blank">Resume</a>
                         </Button>
