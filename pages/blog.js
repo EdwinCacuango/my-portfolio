@@ -71,7 +71,7 @@ export default function Blog({ posts }) {
           Un espacio para compartir sobre derecho y tecnología
         </p>
       </div>
-      <section className="center md:max-w-[85%] mt-8">
+      <section className="center md:max-w-[85%] mt-8" id="last-posts">
         <h2 className="title-2">Recién agregados</h2>
         <div className="presentation-blog ">
           <BlogCard
@@ -83,10 +83,8 @@ export default function Blog({ posts }) {
             datePublished={`hace ${featuredDate}`}
             category={featured.category[0].name}
             description={featured.shortDescription}
-            titleStyle="lg:title-3 title-4"
             cardStyle="last-post"
           />
-
           <BlogCard
             key={relevant1.id}
             title={relevant1.title}
@@ -96,7 +94,6 @@ export default function Blog({ posts }) {
             datePublished={`hace ${relevant1Date}`}
             category={relevant1.category[0].name}
             description={relevant1.shortDescription}
-            titleStyle="title-4"
             cardStyle="card-featured"
           />
           <BlogCard
@@ -108,7 +105,6 @@ export default function Blog({ posts }) {
             datePublished={`hace ${relevant2Date}`}
             category={relevant2.category[0].name}
             description={relevant2.shortDescription}
-            titleStyle="title-4"
             cardStyle="card-featured"
           />
         </div>
@@ -131,7 +127,7 @@ export default function Blog({ posts }) {
                 category={post.category[0].name}
                 description={post.shortDescription}
                 cardStyle="normal-blog"
-                titleStyle="title-3"
+                titleStyle="title-3 font-medium lg:font-normal"
               />
             );
           })}

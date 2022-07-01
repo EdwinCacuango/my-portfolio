@@ -59,7 +59,7 @@ export function NavBlogMobile({ activeState }) {
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/blog">
+            <Link href="/blog/#lasts-posts">
               <a onClick={activeMenuHandler}>Últimos post</a>
             </Link>
           </li>

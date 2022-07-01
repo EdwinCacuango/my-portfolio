@@ -157,14 +157,14 @@ ul {
 }
 /* Recent posts */
 .presentation-blog {
-  @apply md:h-[25rem];
+  @apply md:h-[28rem];
   @apply md:grid md:grid-cols-2 grid-rows-2 gap-x-6 gap-y-3 place-items-stretch;
 }
 .last-post {
   @apply md:row-span-full h-full;
 }
 .last-post div:first-child{
-  @apply md:h-52;
+  @apply md:h-60;
 }
 .last-post div:first-child div span img {
   min-width: auto;
@@ -173,8 +173,12 @@ ul {
   max-height: auto;
   object-fit: contain;
 }
+
+.last-post div:last-child h3{
+  @apply title-2 md:text-2xl md:my-3 md:leading-6;
+}
 .last-post div:last-child div:nth-child(2) p{
-  @apply text-base mb-2;
+  @apply text-base lg:text-xl mb-2;
 }
 
 .card-featured {
@@ -188,7 +192,13 @@ ul {
   min-height: auto;
   max-width: auto;
   max-height: auto;
-  object-fit: contain;
+  object-fit: cover;
+}
+.card-featured div:last-child div:nth-child(2) p{
+  @apply lg:text-sm text-base;
+}
+.card-featured div:last-child h3{
+  @apply title-2 md:text-lg md:leading-5 md:mt-3;
 }
 
 /* All post section */
@@ -205,7 +215,7 @@ ul {
   @apply md:h-40;
 }
 .normal-blog div:last-child p {
-  @apply text-sm mb-2;
+  @apply text-base lg:text-sm mb-2;
 }
 .normal-blog div:first-child div span img {
   min-width: auto;
