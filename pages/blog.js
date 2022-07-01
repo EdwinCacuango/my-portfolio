@@ -66,7 +66,7 @@ export default function Blog({ posts }) {
   return (
     <Layout>
       <div>
-        <h1 className="title mt-24 md:text-center">Mi Blog</h1>
+        <h1 className="title lg:mt-16 mt-24 md:text-center">Mi Blog</h1>
         <p className=" text-lg my-2 md:text-enphasis md:text-center">
           Un espacio para compartir sobre derecho y tecnología
         </p>
@@ -74,18 +74,19 @@ export default function Blog({ posts }) {
       <section className="center md:max-w-[85%] mt-8">
         <h2 className="title-2">Recién agregados</h2>
         <div className="presentation-blog ">
-          <div className="last-post">
-            <BlogCard
-              key={featured.id}
-              title={featured.title}
-              author={featured.author.username}
-              coverPhoto={featured.coverPhoto.url}
-              slug={featured.slug}
-              datePublished={`hace ${featuredDate}`}
-              category={featured.category[0].name}
-              description={featured.shortDescription}
-            />
-          </div>
+          <BlogCard
+            key={featured.id}
+            title={featured.title}
+            author={featured.author.username}
+            coverPhoto={featured.coverPhoto.url}
+            slug={featured.slug}
+            datePublished={`hace ${featuredDate}`}
+            category={featured.category[0].name}
+            description={featured.shortDescription}
+            titleStyle="lg:title-3 title-4"
+            cardStyle="last-post"
+          />
+
           <BlogCard
             key={relevant1.id}
             title={relevant1.title}

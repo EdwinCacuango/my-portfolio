@@ -18,7 +18,7 @@ const BlogCard = ({
           <Image src={coverPhoto} alt="" layout="fill"/>
         </div>
       </div>
-      <div className="px-2">
+      <div className="px-2 md:py-2">
         <p className="text-xs my-4 md:my-1">
           <span className="bg-rose-500 px-3 py-1 rounded-xl text-slate-100">
             {category}
