@@ -3,7 +3,6 @@ import { ShareBtns } from "../../components/ShareBtns"
 import { GraphQLClient, gql } from "graphql-request"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
-import IconBar from "../../components/IconBar"
 import BuyMeACoffe from "../../components/BuyMeACoffe"
 
 const graphcms = new GraphQLClient("https://api-sa-east-1.graphcms.com/v2/cl468i5n71qhe01ywbvsa8io8/master")
@@ -20,7 +19,7 @@ const QUERY = gql`
             }
           }
         slug,
-        shortDescription,
+        introduction,
         content{
          html
        }
@@ -70,7 +69,7 @@ export default function BlogPost({ post }) {
             {/* Encabezado para laptos en adelante */}
             <div className="hidden lg:block">
                 <h1 className="title lg:mt-20 ">{post.title}</h1>
-                <p className="my-4 text-2xl">{post.shortDescription}</p>
+                <p className="my-4 text-base md:text-xl font-light text-slate-500">{post.introduction}</p>
                 {/* Author, category, etc */}
                 <div className="my-2 py-4 gap-16 flex items-center">
                     <p className="text-xl">
