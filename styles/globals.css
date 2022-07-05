@@ -33,7 +33,12 @@ ul {
   @apply sm:w-full sm:min-h-screen;
 }
 .home-main {
-  grid-column: 3/7;
+  grid-column: 2/7;
+}
+@media (min-width: 768px) {
+  .home-main {
+    grid-column: 3/7;
+  }
 }
 .sidebar {
   grid-column: 1/2;
@@ -52,7 +57,7 @@ ul {
   @apply sm:py-12 py-6 sm:pr-12 pr-6;
 }
 .section-home {
-  @apply h-screen flex justify-center items-center;
+  @apply lg:h-screen flex justify-center items-center;
 }
 .card {
   @apply bg-white  md:rounded-xl p-3 md:p-2 md:shadow-lg my-3 md:my-0;
@@ -69,7 +74,7 @@ ul {
 }
 
 .title-2 {
-  @apply lg:text-5xl md:text-4xl text-3xl mb-4;
+  @apply lg:text-5xl md:text-4xl text-2xl mb-4;
 }
 
 .title-3 {
@@ -81,11 +86,11 @@ ul {
 }
 
 .text-enphasis {
-  @apply text-2xl my-3 text-slate-500;
+  @apply lg:text-2xl my-3 text-slate-500;
 }
 
 .details {
-  @apply text-rose-500 text-xl;
+  @apply text-rose-500 lg:text-xl;
 }
 .nav-home,
 .nav {
@@ -131,21 +136,21 @@ ul {
 
 /* Styles for Experience table only */
 .organizations-list {
-  border-left: 3px solid rgb(252, 133, 133);
+  @apply border-t-2 md:border-l-2 md:border-b-0 md:border-rose-200;
   margin: 0;
   padding: 0;
+  @apply flex md:block;
 }
 .organizations-list li:focus-visible,
 .organizations-list li:hover {
-  width: 100%;
-  border-color: transparent;
-  @apply bg-rose-500 text-slate-50;
+  @apply h-full md:w-full md:h-auto;
+  @apply md:bg-rose-500 md:text-slate-50;
 }
 
 .organizations-list li button {
-  width: 100%;
+  @apply h-full md:w-full md:h-auto;
   padding: 1rem;
-  text-align: left;
+  @apply center md:text-left;
   background-color: transparent;
   border: none;
 }
@@ -155,6 +160,13 @@ ul {
   outline-color: transparent;
   @apply bg-rose-500 text-slate-50;
 }
+@media (min-width: 768px) {
+  .organizations-list li button:focus-visible,
+  .organizations-list li button:focus {
+    margin-left: 0;
+    margin-top: -1px;
+  }
+}
 /* Recent posts */
 .presentation-blog {
   @apply md:h-[28rem];
@@ -163,7 +175,7 @@ ul {
 .last-post {
   @apply md:row-span-full h-full;
 }
-.last-post div:first-child{
+.last-post div:first-child {
   @apply md:h-60;
 }
 .last-post div:first-child div span img {
@@ -174,10 +186,10 @@ ul {
   object-fit: contain;
 }
 
-.last-post div:last-child h3{
+.last-post div:last-child h3 {
   @apply title-2 md:text-2xl md:my-3 md:leading-6;
 }
-.last-post div:last-child div:nth-child(2) p{
+.last-post div:last-child div:nth-child(2) p {
   @apply text-base lg:text-xl mb-2;
 }
 
@@ -194,10 +206,10 @@ ul {
   max-height: auto;
   object-fit: cover;
 }
-.card-featured div:last-child div:nth-child(2) p{
+.card-featured div:last-child div:nth-child(2) p {
   @apply lg:text-sm text-base;
 }
-.card-featured div:last-child h3{
+.card-featured div:last-child h3 {
   @apply title-2 md:text-lg md:leading-5 md:mt-3;
 }
 
@@ -240,14 +252,13 @@ ul {
   @apply lg:my-3 lg:text-lg;
 }
 
-.content-import ul{
+.content-import ul {
   @apply list-disc ml-6 mr-3;
   @apply lg:ml-16 lg:mr-6;
 }
-.content-import ul li{
+.content-import ul li {
   @apply my-1.5 text-base;
   @apply lg:my-3 lg:text-lg;
-
 }
 .content-import blockquote {
   @apply my-3 ml-6 py-2 px-4 italic border-l-4 bg-rose-50 text-base text-neutral-600 border-rose-500;

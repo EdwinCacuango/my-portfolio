@@ -64,8 +64,8 @@ export default function FormContact() {
         <section className="section-home" id="contact">
             <div className='w-full'>
             <h2 className='title-2 mt-36'>0.4 Contáctame</h2>
-            <div className='flex'>
-                <div className='w-[60%]'>
+            <div className='flex flex-col md:flex-row'>
+                <div className=' w-full md:w-[60%]'>
                     <form onSubmit={handleOnSubmit} className="flex flex-col mt-4 gap-3">
                         <label htmlFor="email" className='title-3'>Email</label>
                         <input

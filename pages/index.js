@@ -14,9 +14,9 @@ export default function Home() {
     <Layout home>
       <Presentation />
       <AboutMe />
-      <section className="section-home" id="experience">
+      <section className="section-home mt-20 md:mt-auto" id="experience">
         <div className="w-full">
-          <div className="flex gap-8 items-center">
+          <div className="flex  gap-4 md:gap-8 items-center">
             <h2 className="title-2">02. Experiencia</h2>
             <div>
               <Button onClick={(() => setIsLegal(true))}>
