@@ -96,7 +96,7 @@ export default function BlogPost({ post }) {
             {/* Encabezado para movil */}
             < div className="lg:hidden">
                 <h1 className="title mt-4">{post.title}</h1>
-                <p className="my-2">{post.shortDescription}</p>
+                <p className="mt-3 mb-2 font-light text-slate-500">{post.introduction}</p>
                 {/* Author, date, category */}
                 <p className="text-base">
                     <span className="text-rose-500 italic">Autor: </span>

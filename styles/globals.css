@@ -241,7 +241,8 @@ ul {
 }
 
 .content-import ul{
-  @apply list-disc ml-16 mr-6;
+  @apply list-disc ml-6 mr-3;
+  @apply lg:ml-16 lg:mr-6;
 }
 .content-import ul li{
   @apply my-1.5 text-base;
