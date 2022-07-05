@@ -37,10 +37,10 @@ const ExperienceTable = ({ isLegal }) => {
     let endDate = format(new Date (jobSelected.endDate), "MMM yyyy", { locale: es })
 
     return (
-        <div className="flex mt-8 gap-12">
+        <div className="flex flex-col-reverse md:flex-row mt-3 md:mt-8 gap-6 md:gap-12">
             {isLegal &&
                 <>
-                    <ul className="w-[30%] organizations-list">
+                    <ul className="md:w-[30%] organizations-list">
                         {
                             jobsDisplay.map(item => {
                                 return (
@@ -50,8 +50,8 @@ const ExperienceTable = ({ isLegal }) => {
                             })
                         }
                     </ul>
-                    <div className="w-full">
-                        <h4 className="title-3">{jobSelected.title}<span className="text-rose-500"> @{jobSelected.organization}</span></h4>
+                    <div className="mt-3 md:mt-0w-full">
+                        <h4 className="text-xl md:title-3">{jobSelected.title}<span className="text-rose-500"> @{jobSelected.organization}</span></h4>
                         <p className="text-slate-500 text-xl">{startDate} - {endDate}</p>
                         <ul className="ul-about break-words w-full">
                             {jobSelected.activities.map((item, index) => {

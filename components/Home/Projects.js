@@ -7,8 +7,8 @@ export const Projects = () => {
     return (
         <section id="projects" className="section-home">
             <div>
-                <h2 className="title-2 mt-36">0.3 Algunos de mis proyectos</h2>
-                <div className="my-8 grid grid-cols-3 place-content-center gap-5">
+                <h2 className="title-3 lg:title-2 mt-36">0.3 Algunos de mis proyectos</h2>
+                <div className="my-8 grid md:grid-cols-3 place-content-center gap-5">
                     <ProjectCard
                         titleProject="Proyecto no legal grande"
                         image={girasoles}

@@ -22,7 +22,7 @@ export default function Layout({ children, home, slug, coverUrl }) {
                 active
                     ? <NavBlogMobile activeState={{ active, setActive }} />
                     : <>
-                        {home && <IconBar className="sidebar fixed top-[45%] left-[6%]" />}
+                        {home && <IconBar className="hidden sidebar md:block fixed top-[45%] left-[6%]" />}
                         {home
                             ?
                             <main className='home-main center container'>
