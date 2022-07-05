@@ -27,7 +27,7 @@ export default function Home() {
           <ExperienceTable isLegal={isLegal} />
         </div>
       </section>
-      <Projects />
+      {/* <Projects /> */}
       <FormContact />
     </Layout>
 
