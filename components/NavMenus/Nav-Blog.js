@@ -55,7 +55,7 @@ export function NavBlogMobile({ activeState }) {
         <ul className="px-12">
           <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/">
-              <a onClick={activeMenuHandler}>Home</a>
+              <a onClick={activeMenuHandler}>Inicio</a>
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
@@ -65,14 +65,14 @@ export function NavBlogMobile({ activeState }) {
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/#about">
-              <a onClick={activeMenuHandler}>About me</a>
+              <a onClick={activeMenuHandler}>Sobre mí</a>
             </Link>
           </li>
-          <li className="text-xl my-8 border-b-2 pb-3">
+          {/* <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/#projects">
               <a onClick={activeMenuHandler}>Proyectos</a>
             </Link>
-          </li>
+          </li> */}
           <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/#contact">
               <a onClick={activeMenuHandler}>Contáctame</a>
