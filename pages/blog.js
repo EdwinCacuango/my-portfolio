@@ -10,7 +10,7 @@ const graphcms = new GraphQLClient(
 
 const QUERY = gql`
   {
-    posts {
+    posts(stage: PUBLISHED){
       id
       title
       datePublish
