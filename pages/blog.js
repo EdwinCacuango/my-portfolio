@@ -49,20 +49,23 @@ export async function getStaticProps() {
 export default function Blog({ posts }) {
   const sorted = posts.sort((a, b) => (a.datePublish > b.datePublish ? -1 : 1));
 
-  const featured = sorted[0];
-  const relevant1 = sorted[1];
-  const relevant2 = sorted[2];
+  if (posts.length > 4) {
+    //Extract as a sinlge object the 3 most recent post
+    const featured = sorted[0];
+    const relevant1 = sorted[1];
+    const relevant2 = sorted[2];
 
-  //DATES FOR STYLED CARDS
-  const featuredDate = formatDistanceToNow(new Date(featured.datePublish), {
-    locale: es,
-  });
-  const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish), {
-    locale: es,
-  });
-  const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish), {
-    locale: es,
-  });
+    //DATES FOR STYLED CARDS
+    const featuredDate = formatDistanceToNow(new Date(featured.datePublish), {
+      locale: es,
+    });
+    const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish), {
+      locale: es,
+    });
+    const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish), {
+      locale: es,
+    });
+  }
   return (
     <Layout>
       <div>
@@ -71,44 +74,48 @@ export default function Blog({ posts }) {
           Un espacio para compartir sobre derecho y tecnología
         </p>
       </div>
-      <section className="center md:max-w-[85%] mt-8" id="last-posts">
-        <h2 className="title-2">Recién agregados</h2>
-        <div className="presentation-blog ">
-          <BlogCard
-            key={featured.id}
-            title={featured.title}
-            author={featured.author.username}
-            coverPhoto={featured.coverPhoto.url}
-            slug={featured.slug}
-            datePublished={`hace ${featuredDate}`}
-            category={featured.category[0].name}
-            description={featured.shortDescription}
-            cardStyle="last-post"
-          />
-          <BlogCard
-            key={relevant1.id}
-            title={relevant1.title}
-            author={relevant1.author.username}
-            coverPhoto={relevant1.coverPhoto.url}
-            slug={relevant1.slug}
-            datePublished={`hace ${relevant1Date}`}
-            category={relevant1.category[0].name}
-            description={relevant1.shortDescription}
-            cardStyle="card-featured"
-          />
-          <BlogCard
-            key={relevant2.id}
-            title={relevant2.title}
-            author={relevant2.author.username}
-            coverPhoto={relevant2.coverPhoto.url}
-            slug={relevant2.slug}
-            datePublished={`hace ${relevant2Date}`}
-            category={relevant2.category[0].name}
-            description={relevant2.shortDescription}
-            cardStyle="card-featured"
-          />
-        </div>
-      </section>
+
+      {
+        posts.length > 4 &&
+        <section className="center md:max-w-[85%] mt-8" id="last-posts">
+          <h2 className="title-2">Recién agregados</h2>
+          <div className="presentation-blog ">
+            <BlogCard
+              key={featured.id}
+              title={featured.title}
+              author={featured.author.username}
+              coverPhoto={featured.coverPhoto.url}
+              slug={featured.slug}
+              datePublished={`hace ${featuredDate}`}
+              category={featured.category[0].name}
+              description={featured.shortDescription}
+              cardStyle="last-post"
+            />
+            <BlogCard
+              key={relevant1.id}
+              title={relevant1.title}
+              author={relevant1.author.username}
+              coverPhoto={relevant1.coverPhoto.url}
+              slug={relevant1.slug}
+              datePublished={`hace ${relevant1Date}`}
+              category={relevant1.category[0].name}
+              description={relevant1.shortDescription}
+              cardStyle="card-featured"
+            />
+            <BlogCard
+              key={relevant2.id}
+              title={relevant2.title}
+              author={relevant2.author.username}
+              coverPhoto={relevant2.coverPhoto.url}
+              slug={relevant2.slug}
+              datePublished={`hace ${relevant2Date}`}
+              category={relevant2.category[0].name}
+              description={relevant2.shortDescription}
+              cardStyle="card-featured"
+            />
+          </div>
+        </section>
+      }
       <section className="mt-4">
         <h2 className="title-2">Todos los posts</h2>
         <div className="md:grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">
