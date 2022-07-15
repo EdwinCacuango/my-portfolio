@@ -39,7 +39,7 @@ const QUERY = gql`
 `
 const SLUGLIST = gql`
     {
-        posts{
+        posts (stage: PUBLISHED){
             slug
         }
     }
