@@ -51,7 +51,7 @@ const ExperienceTable = ({ isLegal }) => {
                         }
                     </ul>
                     <div className="mt-3 md:mt-0w-full">
-                        <h4 className="text-xl md:title-3">{jobSelected.title}<span className="text-rose-500"> @{jobSelected.organization}</span></h4>
+                        <h3 className="text-xl md:title-3">{jobSelected.title}<span className="text-rose-500"> @{jobSelected.organization}</span></h3>
                         <p className="text-slate-500 text-xl">{startDate} - {endDate}</p>
                         <ul className="ul-about break-words w-full">
                             {jobSelected.activities.map((item, index) => {
