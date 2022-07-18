@@ -67,7 +67,7 @@ export default function Blog({ posts }) {
     });
   }
   return (
-    <Layout>
+    <Layout title="Mi blog | Edwin Cacuago">
       <div>
         <h1 className="title lg:mt-16 mt-24 md:text-center">Mi Blog</h1>
         <p className=" text-lg my-2 md:text-enphasis md:text-center">

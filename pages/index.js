@@ -11,7 +11,7 @@ import FormContact from "../components/Home/FormContact"
 export default function Home() {
   const [isLegal, setIsLegal] = useState(true)
   return (
-    <Layout home>
+    <Layout home title="Mi portfolio | Edwin Cacuango">
       <Presentation />
       <AboutMe />
       <section className="section-home mt-20 md:mt-auto" id="experience">
