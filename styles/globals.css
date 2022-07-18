@@ -136,7 +136,7 @@ ul {
 
 /* Styles for Experience table only */
 .organizations-list {
-  @apply border-t-2 md:border-l-2 md:border-b-0 md:border-rose-200;
+  @apply border-t-2 md:border-t-0 md:border-l-2 md:border-b-0 md:border-rose-200;
   margin: 0;
   padding: 0;
   @apply flex md:block;
