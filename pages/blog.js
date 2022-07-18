@@ -10,7 +10,7 @@ const graphcms = new GraphQLClient(
 
 const QUERY = gql`
   {
-    posts(stage: PUBLISHED){
+    posts(stage: PUBLISHED) {
       id
       title
       datePublish
@@ -67,7 +67,10 @@ export default function Blog({ posts }) {
     });
   }
   return (
-    <Layout title="Mi blog | Edwin Cacuago">
+    <Layout
+      title="Mi blog | Edwin Cacuago"
+      content="Hola! Bienvenido a mi blog. Aquí hablaremos acerca de datos personales, privacidad y desarrollo web."
+    >
       <div>
         <h1 className="title lg:mt-16 mt-24 md:text-center">Mi Blog</h1>
         <p className=" text-lg my-2 md:text-enphasis md:text-center">
@@ -75,8 +78,7 @@ export default function Blog({ posts }) {
         </p>
       </div>
 
-      {
-        posts.length > 4 &&
+      {posts.length > 4 && (
         <section className="center md:max-w-[85%] mt-8" id="last-posts">
           <h2 className="title-2">Recién agregados</h2>
           <div className="presentation-blog ">
@@ -115,7 +117,7 @@ export default function Blog({ posts }) {
             />
           </div>
         </section>
-      }
+      )}
       <section className="mt-4">
         <h2 className="title-2">Todos los posts</h2>
         <div className="md:grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 grid-row-auto gap-3">

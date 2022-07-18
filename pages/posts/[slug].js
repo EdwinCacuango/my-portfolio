@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post }) {
     const dateP = format(new Date(post.datePublish), `d MMM yyyy`, { locale: es })
     return (
-        <Layout slug coverUrl={post.coverPhoto.url} title={post.title}>
+        <Layout slug coverUrl={post.coverPhoto.url} title={post.title} content={post.introduction}>
             {/* Encabezado para laptos en adelante */}
             <div className="hidden lg:block">
                 <h1 className="title lg:mt-20 ">{post.title}</h1>

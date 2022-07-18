@@ -6,5 +6,9 @@ const nextConfig = {
 module.exports = {
   images: {
     domains: ['media.graphassets.com'],
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
   }
 }
