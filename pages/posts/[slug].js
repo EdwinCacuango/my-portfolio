@@ -117,7 +117,7 @@ export default function BlogPost({ post }) {
                 <p className="md:text-xl">Gracias por llegar al final del post¡ No olvides volver, cada semana tenemos nuevo contenido.</p>
                 <div className="md:my-4 md:flex justify-between items-center gap-4">
                     <ShareBtns title={post.title} slug={post.slug} category={post.category[0].name} />
-                    <div className="md:text-xl my-4 flex items-center gap-2">Invítame un ☕ →
+                    <div className="md:text-xl my-4 flex items-center gap-2">Invítame un ☕
                         <span> <BuyMeACoffe /></span>
                     </div>
                 </div>
