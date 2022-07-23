@@ -215,7 +215,7 @@ ul {
 
 /* All post section */
 .normal-blog {
-  @apply md:h-[25rem];
+  @apply md:h-[27rem];
 }
 .normal-blog h3 {
   @apply title-4;
