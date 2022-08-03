@@ -25,9 +25,9 @@ export const ShareBtns = ({ title, slug, category }) => {
     }
   ]
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center justify-between gap-2">
       <p className="py-2 text-base md:text-xl">Ayúdame difundiendo: </p>
-      <ul className="flex my-2 justify-around">
+      <ul className="flex my-2 justify-around ">
         {medias.map(item => {
           return (<li key={item.title}>
             <Icons src={item.img} alt={`${item.title} logo`} url={item.url} />
