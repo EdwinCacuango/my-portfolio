@@ -49,20 +49,23 @@ export async function getStaticProps() {
 export default function Blog({ posts }) {
   const sorted = posts.sort((a, b) => (a.datePublish > b.datePublish ? -1 : 1));
 
-  if (posts.length > 4) {
+  let featured, relevant1, relevant2
+  let featuredDate, relevant1Date, relevant2Date
+  if (sorted.length > 3) {
     //Extract as a sinlge object the 3 most recent post
-    const featured = sorted[0];
-    const relevant1 = sorted[1];
-    const relevant2 = sorted[2];
+    featured = posts[0];
+    console.log(featured)
+    relevant1 = posts[1];
+    relevant2 = posts[2];
 
     //DATES FOR STYLED CARDS
-    const featuredDate = formatDistanceToNow(new Date(featured.datePublish), {
+    featuredDate = formatDistanceToNow(new Date(featured.datePublish), {
       locale: es,
     });
-    const relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish), {
+    relevant1Date = formatDistanceToNow(new Date(relevant1.datePublish), {
       locale: es,
     });
-    const relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish), {
+    relevant2Date = formatDistanceToNow(new Date(relevant2.datePublish), {
       locale: es,
     });
   }
@@ -78,7 +81,7 @@ export default function Blog({ posts }) {
         </p>
       </div>
 
-      {posts.length > 4 && (
+      {sorted.length > 3 && (
         <section className="center md:max-w-[85%] mt-8" id="last-posts">
           <h2 className="title-2">Recién agregados</h2>
           <div className="presentation-blog ">
