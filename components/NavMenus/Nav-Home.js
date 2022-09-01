@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "../UI/Button"
 
-export default function NavHome({activeState}) {
+export default function NavHome({ activeState }) {
     const { active, setActive } = activeState
     const activeMenuHandler = () => {
         setActive(prevState => !prevState)
@@ -12,7 +12,7 @@ export default function NavHome({activeState}) {
                 <ul className="nav-home">
                     <li><Link href="/#about"><a>About me</a></Link></li>
                     <li><Link href="/#experience"><a>Experiencia</a></Link></li>
-                    {/* <li><Link href="/#projects"><a>Proyectos</a></Link></li> */}
+                    <li><Link href="/#projects"><a>Proyectos</a></Link></li>
                     <li><Link href="/#contact"><a>Contáctame</a></Link></li>
                     <li><Link href="/blog"><a>Blog</a></Link></li>
                     <li>

@@ -17,10 +17,16 @@ export function NavBlog({ activeState }) {
             </Link>
           </li>
           <li>
+            <Link href="/#projects">
+              <a>Proyectos</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/#contact">
               <a>Contáctame</a>
             </Link>
           </li>
+
           <li>
             <Button stylesAdded="px-8">
               <Link href="/blog">
@@ -68,11 +74,11 @@ export function NavBlogMobile({ activeState }) {
               <a onClick={activeMenuHandler}>Sobre mí</a>
             </Link>
           </li>
-          {/* <li className="text-xl my-8 border-b-2 pb-3">
+          <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/#projects">
               <a onClick={activeMenuHandler}>Proyectos</a>
             </Link>
-          </li> */}
+          </li>
           <li className="text-xl my-8 border-b-2 pb-3">
             <Link href="/#contact">
               <a onClick={activeMenuHandler}>Contáctame</a>
