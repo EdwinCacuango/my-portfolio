@@ -14,7 +14,7 @@ export default function Layout({ children, home, slug, coverUrl, title, content 
         <title>{title}</title>
         <meta name="description" content={content} />
         {slug && <meta name="image" property="og:image" content={coverUrl} />}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-website.png" />
       </Head>
       <Script
         data-host="https://microanalytics.io"
