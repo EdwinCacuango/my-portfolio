@@ -1,43 +1,91 @@
-import Image from "next/image"
+import Image from "next/image";
+import { useState } from "react";
+import TechStack from "../TechStack";
+import styles from "../../styles/about.module.css";
+
 export const AboutMe = () => {
+
     return (
-        <section className="section-home" id="about">
-            <div>
-                <h2 className="title-2 mt-32">0.1 Sobre mí</h2>
-                <div className="flex  flex-col-reverse md:flex-row gap-6">
-                    {/* Description */}
-                    <div className="p-2 md:text-justify md:max-w-[50%]">
-                        <p> Hola¡ Déjame te cuento mi historia: mi interés en el mundo del desarrollo empezó allá por el 2020 cuando me involucré en el uso de herramientas web y control ciudadano. En este poco tiempo he descubierto todas las ventajas y oportunidades que suponen la fusión de la tecnología y el derecho y estoy realmente entusiasmado de poder colaborar en la creación y distribución de dichas soluciones digitales.</p>
-                        <p className="my-2">Actualmente sigo estudiando para convertirme en un experto en desarrollo web, datos personales y ciberseguridad. Adicionalmente, durante este tiempo también he sido miembro de orgnizaciones de innovación legal, legaltech y propiedad intelectual.</p>
-                        {/* Habilidades */}
-                        <div>
-                            <p>Estas son algunas de las tecnologías en con las que he trabajado recientemente:</p>
-                            <ul className="grid grid-cols-2 m-3 ul-about">
-                                <li>Semantic HTML y CSS</li>
-                                <li>Boostrap y Tailwind CSS</li>
-                                <li>Javascript</li>
-                                <li>React JS</li>
-                                <li>Next JS</li>
-                                <li>Git y GitHub</li>
-                            </ul>
+        <section className="section-home about-section" id="about">
+            <div className={styles.aboutContainer}>
+                {/* Número de sección con estilo moderno */}
+                <div className={styles.sectionNumberContainer}>
+                    <span className={styles.sectionNumber}>01.</span>
+                    <h2 className="title-2">Sobre mí</h2>
+                    <div className={styles.sectionLine}></div>
+                </div>
+
+                <div className={styles.aboutContentGrid}>
+                    {/* Contenido de texto */}
+                    <div className={styles.aboutTextContent}>
+                        {/* Badge interactivo */}
+                        <div className={styles.statusBadge}>
+                            <span className={styles.statusDot}></span>
+                            <span>Disponible para proyectos Full Stack</span>
+                        </div>
+
+                        <div className={styles.aboutStory}>
+                            <p className={styles.storyText}>
+                                Hola! Déjame te cuento mi historia: mi interés en el mundo del
+                                desarrollo empezó allá por el{" "}
+                                <span className={styles.highlightText}>2020</span> cuando
+                                me involucré en el uso de herramientas web y control ciudadano.
+                            </p>
+
+                            <p className={styles.storyText}>
+                                En este poco tiempo he descubierto todas las ventajas y oportunidades
+                                que suponen la{" "}
+                                <span className={styles.highlightText}>
+                                    fusión de la tecnología y el derecho
+                                </span>{" "}
+                                y estoy realmente entusiasmado de poder colaborar en la creación y
+                                distribución de dichas soluciones digitales.
+                            </p>
+
+                            <p className={styles.storyText}>
+                                Como <span className={styles.highlightText}>desarrollador Full Stack</span>, trabajo
+                                tanto en el frontend con React y Next.js, como en el backend con Python,
+                                Flask y Django. Actualmente sigo estudiando para convertirme en un experto en
+                                desarrollo web, datos personales y ciberseguridad.
+                            </p>
                         </div>
                     </div>
-                    <div >
-                        <div className="relative leading-none">
+
+                    {/* Imagen con efectos mejorados */}
+                    <div className={styles.aboutImageWrapper}>
+                        <div className={styles.imageDecorations}>
+                            <div className={`${styles.decorationCircle} ${styles.decoration1}`}></div>
+                            <div className={`${styles.decorationCircle} ${styles.decoration2}`}></div>
+                            <div className={`${styles.decorationCircle} ${styles.decoration3}`}></div>
+                        </div>
+
+
+                        <div className={styles.imageFrame}>
                             <Image
                                 src="/fotoPerfil.jpeg"
                                 alt="Edwin Cacuango profile picture"
-                                width={400}
-                                height={313.75}
-                                priority
+                                width={450}
+                                height={353}
                             />
-                            <div className="layer"></div>
                         </div>
 
+
+                        {/* Stats decorativos actualizados */}
+                        <div className={styles.statsFloating}>
+                            <div className={`${styles.statCard} ${styles.statCard1}`}>
+                                <div className={styles.statNumber}>2+</div>
+                                <div className={styles.statLabel}>Años de experiencia</div>
+                            </div>
+                            <div className={`${styles.statCard} ${styles.statCard2}`}>
+                                <div className={styles.statNumber}>5+</div>
+                                <div className={styles.statLabel}>Proyectos completados</div>
+                            </div>
+                        </div>
                     </div>
+
+                    <TechStack />
                 </div>
             </div>
-
-        </section >
-    )
-}
+        </section>
+    );
+};

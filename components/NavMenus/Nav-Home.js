@@ -10,11 +10,11 @@ export default function NavHome({ activeState }) {
         <div>
             <nav className="hidden md:block">
                 <ul className="nav-home">
-                    <li><Link href="/#about"><a>About me</a></Link></li>
-                    <li><Link href="/#experience"><a>Experiencia</a></Link></li>
-                    <li><Link href="/#projects"><a>Proyectos</a></Link></li>
-                    <li><Link href="/#contact"><a>Contáctame</a></Link></li>
-                    <li><Link href="/blog"><a>Blog</a></Link></li>
+                    <li><Link href="/#about">About me</Link></li>
+                    <li><Link href="/#experience">Experiencia</Link></li>
+                    <li><Link href="/#projects">Proyectos</Link></li>
+                    <li><Link href="/#contact">Contáctame</Link></li>
+                    <li><Link href="/blog">Blog</Link></li>
                     <li>
                         <Button>
                             <a href="https://drive.google.com/file/d/1caQOH7CSlL-d3gYfRNUyNPYBWtpWAHks/view?usp=sharing" rel="noreferrer" target="_blank">Resume</a>

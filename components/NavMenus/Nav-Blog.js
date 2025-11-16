@@ -13,24 +13,24 @@ export function NavBlog({ activeState }) {
         <ul className="nav">
           <li>
             <Link href="/#about">
-              <a>About me</a>
+            About me
             </Link>
           </li>
           <li>
             <Link href="/#projects">
-              <a>Proyectos</a>
+             Proyectos
             </Link>
           </li>
           <li>
             <Link href="/#contact">
-              <a>Contáctame</a>
+             Contáctame
             </Link>
           </li>
 
           <li>
             <Button stylesAdded="px-8">
               <Link href="/blog">
-                <a>Últimos post</a>
+               Últimos posts
               </Link>
             </Button>
           </li>
@@ -60,28 +60,28 @@ export function NavBlogMobile({ activeState }) {
       <nav className="mt-4">
         <ul className="px-12">
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/">
-              <a onClick={activeMenuHandler}>Inicio</a>
+            <Link href="/" onClick={activeMenuHandler}>
+              Inicio
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/blog/#lasts-posts">
-              <a onClick={activeMenuHandler}>Blog</a>
+            <Link href="/blog/#lasts-posts" onClick={activeMenuHandler}>
+              Blog
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/#about">
-              <a onClick={activeMenuHandler}>Sobre mí</a>
+            <Link href="/#about" onClick={activeMenuHandler}>
+            Sobre mí
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/#projects">
-              <a onClick={activeMenuHandler}>Proyectos</a>
+            <Link href="/#projects" onClick={activeMenuHandler}>
+              Proyectos
             </Link>
           </li>
           <li className="text-xl my-8 border-b-2 pb-3">
-            <Link href="/#contact">
-              <a onClick={activeMenuHandler}>Contáctame</a>
+            <Link href="/#contact" onClick={activeMenuHandler}>
+            Contáctame
             </Link>
           </li>
 

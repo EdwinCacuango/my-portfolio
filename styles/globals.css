@@ -28,18 +28,22 @@ ul {
   grid-row: 1/2;
   grid-column: 1/6;
 }
+
 .main {
   grid-column: 1/7;
   @apply sm:w-full sm:min-h-screen;
 }
+
 .home-main {
   grid-column: 2/7;
 }
+
 @media (min-width: 768px) {
   .home-main {
     grid-column: 3/7;
   }
 }
+
 .sidebar {
   grid-column: 1/2;
 }
@@ -53,22 +57,28 @@ ul {
 .center {
   margin: 0 auto;
 }
+
 .container {
   @apply sm:py-12 py-6 sm:pr-12 pr-6;
 }
+
 .section-home {
   @apply lg:h-screen flex justify-center items-center;
 }
+
 .card {
-  @apply bg-white  md:rounded-xl p-3 md:p-2 md:shadow-lg my-3 md:my-0;
+  @apply bg-white md:rounded-xl p-3 md:p-2 md:shadow-lg my-3 md:my-0;
 }
+
 .icon-card span {
   @apply w-1;
 }
+
 .btn-primary {
   @apply bg-rose-500 p-3 text-slate-50;
   @apply hover:opacity-75;
 }
+
 .title {
   @apply lg:text-7xl text-5xl font-semibold lg:leading-tight;
 }
@@ -92,14 +102,17 @@ ul {
 .details {
   @apply text-rose-500 lg:text-xl;
 }
+
 .nav-home,
 .nav {
   @apply flex content-center items-center gap-4;
 }
+
 .nav-home li,
 .nav li {
   @apply p-1 hover:border-b-2 border-b-rose-500;
 }
+
 .nav li:last-child,
 .nav-home li:last-child {
   @apply hover:border-0;
@@ -141,6 +154,7 @@ ul {
   padding: 0;
   @apply flex md:block;
 }
+
 .organizations-list li:focus-visible,
 .organizations-list li:hover {
   @apply h-full md:w-full md:h-auto;
@@ -154,30 +168,37 @@ ul {
   background-color: transparent;
   border: none;
 }
+
 .organizations-list li button:focus-visible,
 .organizations-list li button:focus {
   margin-left: -3px;
   outline-color: transparent;
   @apply bg-rose-500 text-slate-50;
 }
+
 @media (min-width: 768px) {
+
   .organizations-list li button:focus-visible,
   .organizations-list li button:focus {
     margin-left: 0;
     margin-top: -1px;
   }
 }
+
 /* Recent posts */
 .presentation-blog {
   @apply md:h-[28rem];
   @apply md:grid md:grid-cols-2 grid-rows-2 gap-x-6 gap-y-3 place-items-stretch;
 }
+
 .last-post {
   @apply md:row-span-full h-full;
 }
+
 .last-post div:first-child {
   @apply md:h-60;
 }
+
 .last-post div:first-child div span img {
   min-width: auto;
   min-height: auto;
@@ -189,6 +210,7 @@ ul {
 .last-post div:last-child h3 {
   @apply title-2 md:text-2xl md:my-3 md:leading-6;
 }
+
 .last-post div:last-child div:nth-child(2) p {
   @apply text-base lg:text-xl mb-2;
 }
@@ -196,9 +218,11 @@ ul {
 .card-featured {
   @apply md:flex md:py-5;
 }
+
 .card-featured div:first-child {
-  @apply md:w-48  md:h-full mr-3;
+  @apply md:w-48 md:h-full mr-3;
 }
+
 .card-featured div:first-child div span img {
   min-width: auto;
   min-height: auto;
@@ -206,9 +230,11 @@ ul {
   max-height: auto;
   object-fit: cover;
 }
+
 .card-featured div:last-child div:nth-child(2) p {
   @apply lg:text-sm text-base;
 }
+
 .card-featured div:last-child h3 {
   @apply title-2 md:text-lg md:leading-5 md:mt-3;
 }
@@ -217,18 +243,23 @@ ul {
 .normal-blog {
   @apply md:h-[27rem];
 }
+
 .normal-blog h3 {
   @apply title-4;
 }
+
 .normal-blog div:first-child {
   @apply md:h-44;
 }
+
 .normal-blog div:last-child {
   @apply md:h-40;
 }
+
 .normal-blog div:last-child p {
   @apply text-base lg:text-sm mb-2;
 }
+
 .normal-blog div:first-child div span img {
   min-width: auto;
   min-height: auto;
@@ -241,12 +272,15 @@ ul {
 .content-import {
   @apply text-left sm:text-justify lg:max-w-[90%] center;
 }
+
 .content-import h2 {
   @apply title-2 my-6;
 }
+
 .content-import h3 {
   @apply title-3;
 }
+
 .content-import p {
   @apply my-1.5 text-base;
   @apply lg:my-3 lg:text-lg;
@@ -256,25 +290,30 @@ ul {
   @apply list-disc ml-6 mr-3;
   @apply lg:ml-16 lg:mr-6;
 }
+
 .content-import ul li {
   @apply my-1.5 text-base;
   @apply lg:my-3 lg:text-lg;
 }
+
 .content-import blockquote {
   @apply my-3 ml-6 py-2 px-4 italic border-l-4 bg-rose-50 text-base text-neutral-600 border-rose-500;
   @apply lg:my-5 lg:mx-12 lg:py-4 lg:px-8 text-xl;
 }
+
 .content-import ol {
   @apply list-decimal pl-8;
 }
 
-.content-import a{
+.content-import a {
   @apply text-blue-600 underline;
 }
 
 .custom-hidden {
   @apply hidden;
+
   @media (min-width: 768px) {
     display: relative;
   }
 }
+

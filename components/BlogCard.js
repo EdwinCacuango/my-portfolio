@@ -33,7 +33,7 @@ const BlogCard = ({
         </div>
         <div className="text-sm mx-3 text-right text-rose-500 hover:text-rose-300">
           <Link href={`/posts/${slug}`}>
-            <a>Seguir leyendo →</a>
+            Seguir leyendo →
           </Link>
         </div>
       </div>
